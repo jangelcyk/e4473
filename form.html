@@ -1,0 +1,498 @@
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+
+<head>
+    <title>FCFS - e4473</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!--<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.css">-->
+    <script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+    <!--<script type="text/javascript" src="js/jquery.mobile-1.4.5.js"></script>-->
+    <script type="text/javascript" src="js/jquery.validate.js"></script>
+
+    <script type="text/javascript">
+        $.validator.setDefaults({
+            submitHandler: function() {
+                alert("submitted!");
+            }
+        });
+        
+    	$().ready(function() {
+
+            $(".next").click(function(){
+                var form = $("#atfForm");
+                form.validate({
+                    rules: {
+                        form_cust_last_name: "required",
+                        form_cust_first_name: "required",
+                        form_cust_middle_name: "required",
+                        form_cust_street_address: "required",
+                        form_cust_city: "required", 
+                        form_cust_county: "required",
+                        form_cust_state: "required",
+                        form_cust_zip: "required",
+                        form_cust_height_ft: "required",
+                        form_cust_height_in: "required",
+                        form_cust_weight: "required",
+                        form_cust_sex: "required",
+                        form_cust_state_residence: "required"
+                    },
+                    messages: {
+                        form_cust_middle_name: "This field is required. NMN if no middle name."
+                    }
+                });
+                if (form.valid() == true){
+                    if ($('#page1').is(":visible")){
+                        current_fs = $('#page1');
+                        next_fs = $('#page2');
+                    }
+                    else if ($('#page2').is(":visible")){
+                        current_fs = $('#page2');
+                        next_fs = $('#page3');
+                    }
+                    else if ($('#page3').is(":visible")){
+                        current_fs = $('#page3');
+                        next_fs = $('#page4');
+                    }
+                    else if ($('#page4').is(":visible")){
+                        current_fs = $('#page4');
+                        next_fs = $('#page5');
+                    }
+                    else if ($('#page5').is(":visible")){
+                        current_fs = $('#page5');
+                        next_fs = $('#page6');
+                    }
+                    else if ($('#page6').is(":visible")){
+                        current_fs = $('#page6');
+                        next_fs = $('#page7');
+                        $('#formsubmit').show();
+                    }
+                    else if ($('#page7').is(":visible")){
+                        current_fs = $('#page7');
+                        next_fs = $('#page7');
+                        $('#formsubmit').show();
+                    }
+                    
+                    next_fs.show(); 
+                    current_fs.hide();
+                }
+            });            
+            
+        });
+                                      
+    </script>
+    <style>#atfForm{width:100%;}#atfForm label{width:50%;}#atfForm label.error,#atfForm  label.error{display:none;margin-left:25px;}</style>    
+</head>
+
+<body>
+    <p>
+        <div id="main">
+        <b>Warning: You may not receive a firearm if prohibited by Federal or State law. The information you provide will be used to determine whether you are prohibited under law from receiving a firearm. Certain violations of the Gun Control Act, 18 U.S.C. &#167;&#167; 921 <i>et. seq</i>., are punishable by up to 10 years imprisonment and/or up to a &#36;250,000 fine.</b>
+        <br />
+        <br />
+        <center>
+            <b>Section A - Must Be Completed Personally By Transferee (Buyer)</b>
+        </center>
+        <br />
+        
+        <form class="cmxform" method="post" action="" enctype="multipart/form-data" id="atfForm">
+            <input type="hidden" name="form_cust_num" value="108633931" />
+            <input type="hidden" name="form_cust_pin" value="338" />
+            <fieldset id="page1">
+                <legend>1. Transferee's Full Name</legend>
+                <p>
+                    <label for="form_cust_last_name">Last Name</label>
+                    <input type="text" name="form_cust_last_name" id="form_cust_last_name" placeholder="Enter Last Name" size="20" required maxlength="20" autofocus="autofocus" />
+                </p>
+                <p>
+                    <label for="form_cust_first_name">First Name</label>
+                    <input type="text" name="form_cust_first_name" id="form_cust_first_name" placeholder="Enter First Name" size="20" required maxlength="20" />
+                </p>
+                <p>
+                    <label for="form_cust_middle_name">Middle Name <i>(If no middle name, state "NMN")</i></label>
+                    <input type="text" name="form_cust_middle_name" id="form_cust_middle_name" placeholder="Enter Middle Name" size="20" maxlength="20" />
+                </p>
+
+                <legend>2.  Current Residence Address <b>(U.S. Postal abbreviations are acceptable.  Cannot be a post office box.)</b></legend>
+                <p>
+                    <label for="form_cust_street_address">Number and Street Address</label>
+                    <input type="text" name="form_cust_street_address" id="form_cust_street_address" size="25" maxlength="25" />
+                </p>
+                <p>
+                    <label for="form_cust_city">City</label>
+                    <input type="text" name="form_cust_city" id="form_cust_city" size="20" maxlength="20" />
+                </p>
+                <p>
+                    <label for="form_cust_county">County</label>
+                    <input type="text" name="form_cust_county" id="form_cust_county" size="20" maxlength="20" />
+                </p>
+                <p>
+                    <label for="form_cust_state">State</label>
+                    <select name="form_cust_state" id="form_cust_state">
+                            <option selected="selected" value>Choose State:</option>
+                            <option value="AL">AL</option>
+                            <option value="AK">AK</option>
+                            <option value="AZ">AZ</option>
+                            <option value="AR">AR</option>
+                            <option value="CA">CA</option>
+                            <option value="CO">CO</option>
+                            <option value="CT">CT</option>
+                            <option value="DE">DE</option>
+                            <option value="DC">DC</option>
+                            <option value="FL">FL</option>
+                            <option value="GA">GA</option>
+                            <option value="HI">HI</option>
+                            <option value="ID">ID</option>
+                            <option value="IL">IL</option>
+                            <option value="IN">IN</option>
+                            <option value="IA">IA</option>
+                            <option value="KS">KS</option>
+                            <option value="KY">KY</option>
+                            <option value="LA">LA</option>
+                            <option value="ME">ME</option>
+                            <option value="MD">MD</option>
+                            <option value="MA">MA</option>
+                            <option value="MI">MI</option>
+                            <option value="MN">MN</option>
+                            <option value="MS">MS</option>
+                            <option value="MO">MO</option>
+                            <option value="MT">MT</option>
+                            <option value="NE">NE</option>
+                            <option value="NV">NV</option>
+                            <option value="NH">NH</option>
+                            <option value="NJ">NJ</option>
+                            <option value="NM">NM</option>
+                            <option value="NY">NY</option>
+                            <option value="NC">NC</option>
+                            <option value="ND">ND</option>
+                            <option value="OH">OH</option>
+                            <option value="OK">OK</option>
+                            <option value="OR">OR</option>
+                            <option value="PA">PA</option>
+                            <option value="RI">RI</option>
+                            <option value="SC">SC</option>
+                            <option value="SD">SD</option>
+                            <option value="TN">TN</option>
+                            <option value="TX">TX</option>
+                            <option value="UT">UT</option>
+                            <option value="VT">VT</option>
+                            <option value="VA">VA</option>
+                            <option value="WA">WA</option>
+                            <option value="WV">WV</option>
+                            <option value="WI">WI</option>
+                            <option value="WY">WY</option>
+                        </select>
+                </p>
+                <p>
+                    <label for="form_cust_zip">ZIP Code</label>
+                    <input type="text" name="form_cust_zip" id="form_cust_zip" size="5" maxlength="5" />
+                </p>
+                <p align="right"><a class="btn btn-primary next">Next</a></p>
+<!--                <p align="right"><button type="button" class="btn btn-primary">Next</button></p>-->
+            </fieldset>
+                
+            <fieldset id="page2">
+                <legend>3. Place of Birth</legend>
+                <p>
+                    <label for="form_cust_place_of_birth">U.S. City and State</label>
+                    <input type="text" name="form_cust_place_of_birth" id="form_cust_place_of_birth" size="25" maxlength="25" />
+                    <select name="form_cust_state_of_birth" id="form_cust_state_of_birth" >
+                        <option selected="selected" value>Choose State:</option>
+                        <option value="AL">AL</option>
+                        <option value="AK">AK</option>
+                        <option value="AZ">AZ</option>
+                        <option value="AR">AR</option>
+                        <option value="CA">CA</option>
+                        <option value="CO">CO</option>
+                        <option value="CT">CT</option>
+                        <option value="DE">DE</option>
+                        <option value="DC">DC</option>
+                        <option value="FL">FL</option>
+                        <option value="GA">GA</option>
+                        <option value="HI">HI</option>
+                        <option value="ID">ID</option>
+                        <option value="IL">IL</option>
+                        <option value="IN">IN</option>
+                        <option value="IA">IA</option>
+                        <option value="KS">KS</option>
+                        <option value="KY">KY</option>
+                        <option value="LA">LA</option>
+                        <option value="ME">ME</option>
+                        <option value="MD">MD</option>
+                        <option value="MA">MA</option>
+                        <option value="MI">MI</option>
+                        <option value="MN">MN</option>
+                        <option value="MS">MS</option>
+                        <option value="MO">MO</option>
+                        <option value="MT">MT</option>
+                        <option value="NE">NE</option>
+                        <option value="NV">NV</option>
+                        <option value="NH">NH</option>
+                        <option value="NJ">NJ</option>
+                        <option value="NM">NM</option>
+                        <option value="NY">NY</option>
+                        <option value="NC">NC</option>
+                        <option value="ND">ND</option>
+                        <option value="OH">OH</option>
+                        <option value="OK">OK</option>
+                        <option value="OR">OR</option>
+                        <option value="PA">PA</option>
+                        <option value="RI">RI</option>
+                        <option value="SC">SC</option>
+                        <option value="SD">SD</option>
+                        <option value="TN">TN</option>
+                        <option value="TX">TX</option>
+                        <option value="UT">UT</option>
+                        <option value="VT">VT</option>
+                        <option value="VA">VA</option>
+                        <option value="WA">WA</option>
+                        <option value="WV">WV</option>
+                        <option value="WI">WI</option>
+                        <option value="WY">WY</option>
+                    </select>
+                    <b>-OR-</b><br />Foreign Country Code<br />
+                        <input type="text" name="form_cust_foreign_country" id="form_cust_foreign_country" size="20" maxlength="20" />
+                </p>
+                <legend>4. Height</legend>
+                <p>
+                    <label for="form_cust_height_ft">Feet</label>
+                    <input type="text" name="form_cust_height_ft" id="form_cust_height_ft" size="2" maxlength="2" type="number" />
+                <br />
+                    <label for="form_cust_height_in">Inches</label>
+                    <input type="text" name="form_cust_height_in" id="form_cust_height_in" size="2" maxlength="2" type="number" />
+                </p>
+                <legend>5. Weight</legend>
+                <p>
+                    <label for="form_cust_weight">Pounds</label>
+                    <input type="text" name="form_cust_weight" id="form_cust_weight" size="3" maxlength="3" type="number" />
+                </p>
+                <legend>6. Gender</legend>
+                <p>
+                        <label><input type="radio" name="form_cust_sex" id="form_cust_sex_male" value="Male" />Male</label>
+                        <label><input type="radio" name="form_cust_sex" id="form_cust_sex_female" value="Female" />Female</label>
+                </p>
+                <legend>7. Birth Date</legend>
+                <p>
+                        <label for="birthdate"></label>
+                        <input type="date" data-role="date" name="date" required id="birthdate" value="" />
+                </p>
+                <p align="right"><a class="btn btn-primary next">Next</a></p>
+            </fieldset>                
+                
+
+            <fieldset id="page3">
+                <legend>8. Social Security Number <i>(<b>Optional</b>, but will help prevent misidentification)</i></legend>
+                <p>
+                    <input type="text" name="form_cust_ssn" id="form_cust_ssn" size="11" maxlength="11" />
+                </p>
+                <legend>9. Unique Personal Identification Number <i>(UPIN)</i> if applicable <i>(See Instructions for Question 9.)</i></legend>
+                <p>
+                    <input type="text" name="form_cust_upin" id="form_cust_upin" size="20" maxlength="20" />
+                </p>
+
+                <legend>10.a. Ethnicity</legend>
+                <p>
+                    <label>
+                    <input type="radio" name="form_cust_ethnicity" required id="form_cust_ethnicity_his" value="Hispanic or Latino" />Hispanic or Latino</label>
+                    <label>
+                    <input type="radio" name="form_cust_ethnicity" id="form_cust_ethnicity_nothis" value="Not Hispanic or Latino" />Not Hispanic or Latino</label>
+                </p>
+                <legend>10.b. Race <i>(Check one or more boxes.)</i></legend>
+                <p>
+                    <label>
+                    <input type="checkbox" name="form_cust_race" id="form_cust_race_ai" required value="American Indian or Alaska Native" />American Indian or Alaska Native</label>
+                    <label>
+                    <input type="checkbox" name="form_cust_race" id="form_cust_race_aa" value="Black or African American" />Black or African American</label>
+                    <label>
+                    <input type="checkbox" name="form_cust_race" id="form_cust_race_wh" value="White" />White</label>
+                    <label>
+                    <input type="checkbox" name="form_cust_race" id="form_cust_race_as" value="Asian" />Asian</label>
+                    <label>
+                    <input type="checkbox" name="form_cust_race" id="form_cust_race_hi" value="Native Hawaiian or Other Pacific Islander" />Native Hawaiian or Other Pacific Islander</label>
+                </p>
+                <p align="right"><a class="btn btn-primary next">Next</a></p>
+            </fieldset>
+            
+            
+            <fieldset id="page4">
+                <legend>11. Answer questions 11.a. <i>(see exceptions)</i> through 11.l and 12 <i>(if applicable)</i> by checking or marking <b><i>&quot;yes&quot; or &quot;no&quot;</i></b> in the boxes to the right of the questions.</legend>
+
+                <legend>11.a.</legend>
+                <p>
+                    <label for="form_cust_question_11a">Are you the actual transferee/buyer of the firearm(s) listed on this form? <b>Warning: You are not the actual buyer if you are acquiring the firearm(s) on behalf of another person. If you are not the actual buyer, the dealer cannot transfer the firearm(s) to you.</b> <i>(See Instructions for Question 11.a.) Exception: <b>If you are picking up a repaired firearm(s)</b> for another person, you are <b>not</b> required to answer 11.a. and may proceed to question 11.b.</i></label>                                        
+                    <label><input type="radio" name="form_cust_question_11a" id="form_cust_question_11a" required value="Yes" />Yes</label>
+                    <label><input type="radio" name="form_cust_question_11a" id="form_cust_question_11a" value="No" />No</label>
+                </p>
+                <legend>11.b.</legend>
+                <p>
+                    <label for="form_cust_question_11b">Are you under indictment or information in any court for a <b>felony</b>, or any other crime, for which the judge could imprison you for more than one year? <i>(See Instructions for Question 11.b.)</i></label>
+                    <label><input type="radio" name="form_cust_question_11b" id="form_cust_question_11b" required value="Yes" />Yes</label>
+                    <label><input type="radio" name="form_cust_question_11b" id="form_cust_question_11b" required value="No" />No</label>
+                </p>
+                <legend>11.c.</legend>
+                <p>
+                    <label for="form_cust_question_11c">Have you ever been convicted in any court of a <b>felony</b>, or any other crime, for which the judge could have imprisoned you for more than one year, even if you received a shorter sentence including probation? <i>(See Instructions for Question 11.c.)</i></label>
+                    <label><input type="radio" name="form_cust_question_11c" id="form_cust_question_11c" required value="Yes" />Yes</label>
+                    <label><input type="radio" name="form_cust_question_11c" id="form_cust_question_11c" value="No" />No</label>
+                </p>
+                <legend>11.d.</legend>
+                <p>
+                    <label for="form_cust_question_11d">Are you a fugitive from justice?</label>
+                    <label><input type="radio" name="form_cust_question_11d" id="form_cust_question_11d" required value="Yes" />Yes</label>
+                    <label><input type="radio" name="form_cust_question_11d" id="form_cust_question_11d" value="No" />No</label>
+                </p>
+                <p align="right"><a class="btn btn-primary next">Next</a></p>
+            </fieldset>
+                <!------- -->
+            <fieldset id="page5">
+                <legend>11.e.</legend>
+                <p>
+                    <label for="form_cust_question_11e">Are you an unlawful user of, or addicted to, marijuana or any depressant, stimulant, narcotic drug, or any other controlled substance</label>
+                    <label><input type="radio" name="form_cust_question_11e" id="form_cust_question_11e" required value="Yes" />Yes</label>
+                    <label><input type="radio" name="form_cust_question_11e" id="form_cust_question_11e" value="No" />No</label>
+                </p>
+                <legend>11.f.</legend>
+                <p>
+                    <label for="form_cust_question_11f">Have you ever been adjudicated mentally defective <i>(which includes a determination by a court, board, commission, or other lawful authority that you are a danger to yourself or to others or are incompetent to manage your own affairs)</i> <b>OR</b> have you ever been committed to a mental institution? <i>(See Instructions for Question 11.f.)</i></label>
+                    <label><input type="radio" name="form_cust_question_11f" id="form_cust_question_11f" required value="Yes" />Yes</label>
+                    <label><input type="radio" name="form_cust_question_11f" id="form_cust_question_11f" value="No" />No</label>
+                </p>
+                <legend>11.g.</legend>
+                <p>
+                    <label for="form_cust_question_11g">Have you been discharged from the Armed Forces under <b>dishonorable</b> conditions?</label>
+                    <label><input type="radio" name="form_cust_question_11g" id="form_cust_question_11g" required value="Yes" />Yes</label>
+                    <label><input type="radio" name="form_cust_question_11g" id="form_cust_question_11g" value="No" />No</label>
+                </p>
+                <legend>11.h.</legend>
+                <p>
+                    <label for="form_cust_question_11h">Are you subject to a court order restraining you from harassing, stalking, or threatening your child or an intimate partner or child of such partner? <i>(See Instructions for Question 11.h.)</i></label>
+                    <label><input type="radio" name="form_cust_question_11h" id="form_cust_question_11h" required value="Yes" />Yes</label>
+                    <label><input type="radio" name="form_cust_question_11h" id="form_cust_question_11h" value="No" />No</label>
+                </p>
+                <p align="right"><a class="btn btn-primary next">Next</a></p>
+            </fieldset>
+                <!------- -->
+            <fieldset id="page6">
+                <legend>11.i.</legend>
+                <p>
+                    <label for="form_cust_question_11i">Have you ever been convicted in any court of a misdemeanor crime of domestic violence? <i>(See Instructions for Question 11.i.)</i></label>
+                    <label><input type="radio" name="form_cust_question_11i" id="form_cust_question_11i" required value="Yes" />Yes</label>
+                    <label><input type="radio" name="form_cust_question_11i" id="form_cust_question_11i" value="No" />No</label>
+                </p>
+                <legend>11.j.</legend>
+                <p>
+                    <label for="form_cust_question_11j">Have you ever renounced your United States citizenship?</label>
+                    <label><input type="radio" name="form_cust_question_11j" id="form_cust_question_11j" required value="Yes" />Yes</label>
+                    <label><input type="radio" name="form_cust_question_11j" id="form_cust_question_11j" value="No" />No</label>
+                </p>
+                <legend>11.k.</legend>
+                <p>
+                    <label for="form_cust_question_11k">Are you an alien <b>illegally</b> in the United States?</label>
+                    <label><input type="radio" name="form_cust_question_11k" id="form_cust_question_11k" required value="Yes" />Yes</label>
+                    <label><input type="radio" name="form_cust_question_11k" id="form_cust_question_11k" value="No" />No</label>
+                </p>
+                <legend>11.l.</legend>
+                <p>
+                    <label for="form_cust_question_11l">Are you an alien admitted to the United States under a nonimmigrant visa? <i>(See Instructions for Question 11.l.) If you answered &quot;no&quot; to this question, do <b>NOT</b> respond to question 12 and proceed to question 13.</i></label>
+                    <label><input type="radio" name="form_cust_question_11l" id="form_cust_question_11l" required value="Yes" />Yes</label>
+                    <label><input type="radio" name="form_cust_question_11l" id="form_cust_question_11l" value="No" />No</label>
+                </p>
+                <legend>12.</legend>
+                <p>
+                    <label for="form_cust_question_12">If you are an alien admitted to the United States under a nonimmigrant visa, do you fall within any of the exceptions set forth in the instructions? <b>(If &quot;yes,&quot; the licensee must complete question 20c.)</b> <i>(See Instructions for Question 12.) If question 11.l. is answered with a &quot;no&quot; response, <b>then do NOT respond</b> to question 12 and proceed to question 13.</i></label>
+                    <label><input type="radio" name="form_cust_question_12" id="form_cust_question_12" required value="Yes" />Yes</label>
+                    <label><input type="radio" name="form_cust_question_12" id="form_cust_question_12" value="No" />No</label>
+                </p>
+                <p align="right"><a class="btn btn-primary next">Next</a></p>
+            </fieldset>
+                <!------- -->
+            <fieldset id="page7">
+                <legend>13. What is your State of residence <i>(if any)?  (See instructions for Question 13.)</i></legend>
+                <p>
+                    <label for="form_cust_state_residence"></label>
+                    <select name="form_cust_state_residence" id="form_cust_state_residence">
+                            <option selected="selected" value>Choose State:</option>
+                            <option value="AL">AL</option>
+                            <option value="AK">AK</option>
+                            <option value="AZ">AZ</option>
+                            <option value="AR">AR</option>
+                            <option value="CA">CA</option>
+                            <option value="CO">CO</option>
+                            <option value="CT">CT</option>
+                            <option value="DE">DE</option>
+                            <option value="DC">DC</option>
+                            <option value="FL">FL</option>
+                            <option value="GA">GA</option>
+                            <option value="HI">HI</option>
+                            <option value="ID">ID</option>
+                            <option value="IL">IL</option>
+                            <option value="IN">IN</option>
+                            <option value="IA">IA</option>
+                            <option value="KS">KS</option>
+                            <option value="KY">KY</option>
+                            <option value="LA">LA</option>
+                            <option value="ME">ME</option>
+                            <option value="MD">MD</option>
+                            <option value="MA">MA</option>
+                            <option value="MI">MI</option>
+                            <option value="MN">MN</option>
+                            <option value="MS">MS</option>
+                            <option value="MO">MO</option>
+                            <option value="MT">MT</option>
+                            <option value="NE">NE</option>
+                            <option value="NV">NV</option>
+                            <option value="NH">NH</option>
+                            <option value="NJ">NJ</option>
+                            <option value="NM">NM</option>
+                            <option value="NY">NY</option>
+                            <option value="NC">NC</option>
+                            <option value="ND">ND</option>
+                            <option value="OH">OH</option>
+                            <option value="OK">OK</option>
+                            <option value="OR">OR</option>
+                            <option value="PA">PA</option>
+                            <option value="RI">RI</option>
+                            <option value="SC">SC</option>
+                            <option value="SD">SD</option>
+                            <option value="TN">TN</option>
+                            <option value="TX">TX</option>
+                            <option value="UT">UT</option>
+                            <option value="VT">VT</option>
+                            <option value="VA">VA</option>
+                            <option value="WA">WA</option>
+                            <option value="WV">WV</option>
+                            <option value="WI">WI</option>
+                            <option value="WY">WY</option>
+                        </select>
+                </p>
+                <legend>14. What is your country of citizenship? <i>(List/check more than one, if applicable.  If you are a citizen of the United States, proceed to question 16.)</i></legend>
+                <p>
+                    <label for="form_cust_citizenship"></label>
+                        <input type="checkbox" name="form_cust_citizenship" id="form_cust_citizenship" value="United States of America" />United States of America
+                    
+                    <label for="form_cust_citizenship"></label>
+                        <input type="checkbox" name="form_cust_citizenship" id="form_cust_citizenship" value="Other" />Other
+                    <br />
+                        <label for="form_cust_citizenship_other_desc" >(Specify)</label>
+                        <input type="text" name="form_cust_citizenship_other_desc" id="form_cust_citizenship_other_desc" size="20" maxlength="20" disabled="disabled" />
+                </p>
+                <legend>15. If you are not a citizen of the United States, what is your U.S.-issued alien number or admission number?</legend>
+                <p>
+                    <label for="form_cust_alien_num"></label>
+                    <input type="text" name="form_cust_alien_num" id="form_cust_alien_num" size="15" maxlength="15" />
+                </p>
+            </fieldset>
+
+            <b>I certify that my answers to Section A are true, correct, and complete. I have read and understand the Notices, Instructions, and Definitions on ATF Form 4473. I understand that answering &quot;yes&quot; to question 11.a. if I am not the actual buyer is a crime punishable as a felony under Federal law, and may also violate State and/or local law. I understand that a person who answers &quot;yes&quot; to any of the questions 11.b. through 11.k. is prohibited from purchasing or receiving a firearm. I understand that a person who answers &quot;yes&quot; to question 11.l. is prohibited from purchasing or receiving a firearm, unless the person also answers &quot;Yes&quot; to question 12. I also understand that making any false oral or written statement, or exhibiting any false or misrepresented identification with respect to this transaction, is a crime punishable as a felony under Federal law, and may also violate State and/or local law. I further understand that the repetitive purchase of firearms for the purpose of resale for livelihood and profit without a Federal firearms license is a violation of law <i>(See Instructions for Question 16)</i></b>
+            <br />
+            <br />
+            <input type="submit" value="Agree and Certify" class="submit" id="formsubmit" />
+        </form>
+        </div>
+    </p>
+    </body>
+</html>
+    
