@@ -6,76 +6,87 @@ $.validator.setDefaults({
 });
 
 $().ready(function() {
-    // validate the comment form when it is submitted
-    $("#commentForm").validate();
 
-    // validate signup form on keyup and submit
-    $("#signupForm").validate({
-        rules: {
-            firstname: "required",
-            lastname: "required",
-            username: {
-                required: true,
-                minlength: 2
+    $(".next").click(function(){
+        var form = $("#atfForm");
+        form.validate({
+            rules: {
+                form_cust_last_name: "required",
+                form_cust_first_name: "required",
+                form_cust_middle_name: "required",
+                form_cust_street_address: "required",
+                form_cust_city: "required", 
+                form_cust_county: "required",
+                form_cust_state: "required",
+                form_cust_zip: "required",
+                form_cust_height_ft: "required",
+                form_cust_height_in: "required",
+                form_cust_weight: "required",
+                form_cust_sex: "required",
+                form_cust_state_residence: "required"
             },
-            password: {
-                required: true,
-                minlength: 5
-            },
-            confirm_password: {
-                required: true,
-                minlength: 5,
-                equalTo: "#password"
-            },
-            email: {
-                required: true,
-                email: true
-            },
-            topic: {
-                required: "#newsletter:checked",
-                minlength: 2
-            },
-            agree: "required"
-        },
-        messages: {
-            firstname: "Please enter your firstname",
-            lastname: "Please enter your lastname",
-            username: {
-                required: "Please enter a username",
-                minlength: "Your username must consist of at least 2 characters"
-            },
-            password: {
-                required: "Please provide a password",
-                minlength: "Your password must be at least 5 characters long"
-            },
-            confirm_password: {
-                required: "Please provide a password",
-                minlength: "Your password must be at least 5 characters long",
-                equalTo: "Please enter the same password as above"
-            },
-            email: "Please enter a valid email address",
-            agree: "Please accept our policy"
+            messages: {
+                form_cust_middle_name: "This field is required. NMN if no middle name."
+            }
+        });
+        if (form.valid() == true){
+            if ($('#page1').is(":visible")){
+                current_fs = $('#page1');
+                next_fs = $('#page2');
+            }
+            else if ($('#page2').is(":visible")){
+                current_fs = $('#page2');
+                next_fs = $('#page3');
+            }
+            else if ($('#page3').is(":visible")){
+                current_fs = $('#page3');
+                next_fs = $('#page4');
+            }
+            else if ($('#page4').is(":visible")){
+                current_fs = $('#page4');
+                next_fs = $('#page5');
+            }
+            else if ($('#page5').is(":visible")){
+                current_fs = $('#page5');
+                next_fs = $('#page6');
+            }
+            else if ($('#page6').is(":visible")){
+                current_fs = $('#page6');
+                next_fs = $('#page7');
+                $('#formsubmit').show();
+            }
+            else if ($('#page7').is(":visible")){
+                current_fs = $('#page7');
+                next_fs = $('#page7');
+                $('#formsubmit').show();
+            }
+
+            next_fs.show(); 
+            current_fs.hide();
+        }
+    });            
+
+
+    
+    $('#form_cust_zip').on('input' , function() {
+        var input = $( this ) ;
+        var regex = /^\d{5}$/;
+        input.val( input.val().replace(/[^0-9]/g, '' ) );
+        var isZip = regex.test(input.val());
+        if (isZip) {
+            input.removeClass("invalid numeric").addClass("valid numeric");
+        }
+        else {
+            input.removeClass("valid numeric").addClass("invalid numeric");
         }
     });
 
-    // propose username by combining first- and lastname
-    $("#username").focus(function() {
-        var firstname = $("#firstname").val();
-        var lastname = $("#lastname").val();
-        if (firstname && lastname && !this.value) {
-            this.value = firstname + "." + lastname;
-        }
-    });
-
-    //code to hide topic selection, disable for demo
-    var newsletter = $("#newsletter");
-    // newsletter topics are optional, hide at first
-    var inital = newsletter.is(":checked");
-    var topics = $("#newsletter_topics")[inital ? "removeClass" : "addClass"]("gray");
-    var topicInputs = topics.find("input").attr("disabled", !inital);
-    // show when newsletter is checked
-    newsletter.click(function() {
-        topics[this.checked ? "removeClass" : "addClass"]("gray");
-        topicInputs.attr("disabled", !this.checked);
-    });
+    
 });
+
+
+                      
+                      
+                      
+                      
+
