@@ -12,7 +12,6 @@
     <script type="text/javascript" src="js/jquery-1.11.3.js"></script>
 <!--    <script type="text/javascript" src="js/jquery.mobile-1.4.5.js"></script>-->
     <script type="text/javascript" src="js/jquery.validate.js"></script>
-<!--    <script type="text/javascript" src="js/jquery.numeric.js"></script>-->
     <script type="text/javascript" src="js/f4473validation.js"></script>
 
     <style>#atfForm{width:100%;}#atfForm label{width:50%;}#atfForm label.error,#atfForm  label.error{display:none;margin-left:25px;}</style>    
@@ -36,33 +35,33 @@
                 <legend>1. Transferee's Full Name</legend>
                 <p>
                     <label for="form_cust_last_name">Last Name</label>
-                    <input type="text" name="form_cust_last_name" id="form_cust_last_name" class="invalid" placeholder="Enter Last Name" size="20" required maxlength="20" autofocus="autofocus" />
+                    <input type="text" name="form_cust_last_name" id="form_cust_last_name" placeholder="Enter Last Name" size="20" required maxlength="20" autofocus="autofocus" />
                 </p>
                 <p>
                     <label for="form_cust_first_name">First Name</label>
-                    <input type="text" name="form_cust_first_name" id="form_cust_first_name" class="invalid" placeholder="Enter First Name" size="20" required maxlength="20" />
+                    <input type="text" name="form_cust_first_name" id="form_cust_first_name" placeholder="Enter First Name" size="20" required maxlength="20" />
                 </p>
                 <p>
                     <label for="form_cust_middle_name">Middle Name <i>(If no middle name, state "NMN")</i></label>
-                    <input type="text" name="form_cust_middle_name" id="form_cust_middle_name" class="invalid" placeholder="Enter Middle Name" size="20" maxlength="20" />
+                    <input type="text" name="form_cust_middle_name" id="form_cust_middle_name" placeholder="Enter Middle Name" size="20" maxlength="20" />
                 </p>
 
                 <legend>2.  Current Residence Address <b>(U.S. Postal abbreviations are acceptable.  Cannot be a post office box.)</b></legend>
                 <p>
                     <label for="form_cust_street_address">Number and Street Address</label>
-                    <input type="text" name="form_cust_street_address" id="form_cust_street_address" class="invalid" size="25" maxlength="25" />
+                    <input type="text" name="form_cust_street_address" id="form_cust_street_address" size="25" maxlength="25" />
                 </p>
                 <p>
                     <label for="form_cust_city">City</label>
-                    <input type="text" name="form_cust_city" id="form_cust_city" class="invalid" size="20" maxlength="20" />
+                    <input type="text" name="form_cust_city" id="form_cust_city" size="20" maxlength="20" />
                 </p>
                 <p>
                     <label for="form_cust_county">County</label>
-                    <input type="text" name="form_cust_county" id="form_cust_county" class="invalid" size="20" maxlength="20" />
+                    <input type="text" name="form_cust_county" id="form_cust_county" size="20" maxlength="20" />
                 </p>
                 <p>
                     <label for="form_cust_state">State</label>
-                    <select name="form_cust_state" id="form_cust_state" class="invalid" > 
+                    <select name="form_cust_state" id="form_cust_state" > 
                             <option selected="selected" value>Choose State:</option>
                             <option value="AL">AL</option>
                             <option value="AK">AK</option>
@@ -119,7 +118,7 @@
                 </p>
                 <p>
                     <label for="form_cust_zip">ZIP Code</label>
-                    <input type="text" name="form_cust_zip" id="form_cust_zip" class="invalid" size="5" maxlength="5"  />
+                    <input type="text" name="form_cust_zip" id="form_cust_zip" size="5" maxlength="5"  />
                 </p>
                 <p align="right"><a class="btn btn-primary next">Next</a></p>
             </fieldset>
@@ -128,7 +127,7 @@
                 <legend>3. Place of Birth</legend>
                 <p>
                     <label for="form_cust_place_of_birth">U.S. City and State</label>
-                    <input type="text" name="form_cust_place_of_birth" id="form_cust_place_of_birth" class="invalid" size="25" maxlength="25" />
+                    <input type="text" name="form_cust_place_of_birth" id="form_cust_place_of_birth" size="25" maxlength="25" />
                     <select name="form_cust_state_of_birth" id="form_cust_state_of_birth" >
                         <option selected="selected" value>Choose State:</option>
                         <option value="AL">AL</option>
@@ -184,20 +183,20 @@
                         <option value="WY">WY</option>
                     </select>
                     <b>-OR-</b><br />Foreign Country Code<br />
-                        <input type="text" name="form_cust_foreign_country" id="form_cust_foreign_country" class="invalid" size="20" maxlength="20" />
+                        <input type="text" name="form_cust_foreign_country" id="form_cust_foreign_country" size="20" maxlength="20" />
                 </p>
                 <legend>4. Height</legend>
                 <p>
                     <label for="form_cust_height_ft">Feet</label>
-                    <input type="text" name="form_cust_height_ft" id="form_cust_height_ft" size="2" class="invalid" maxlength="2" type="number" />
+                    <input type="text" name="form_cust_height_ft" id="form_cust_height_ft" size="2" maxlength="2" type="number" />
                 <br />
                     <label for="form_cust_height_in">Inches</label>
-                    <input type="text" name="form_cust_height_in" id="form_cust_height_in" size="2" maxlength="2" type="number" />
+                    <input type="text" name="form_cust_height_in" id="form_cust_height_in" size="2" type="number" />
                 </p>
                 <legend>5. Weight</legend>
                 <p>
                     <label for="form_cust_weight">Pounds</label>
-                    <input type="text" name="form_cust_weight" id="form_cust_weight" size="3" maxlength="3" type="number" />
+                    <input type="text" name="form_cust_weight" id="form_cust_weight" size="3" type="number" />
                 </p>
                 <legend>6. Gender</legend>
                 <p>

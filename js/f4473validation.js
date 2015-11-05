@@ -74,10 +74,10 @@ $().ready(function() {
         input.val( input.val().replace(/[^0-9]/g, '' ) );
         var isZip = regex.test(input.val());
         if (isZip) {
-            input.removeClass("invalid numeric").addClass("valid numeric");
+            input.removeClass("invalid").addClass("valid");
         }
         else {
-            input.removeClass("valid numeric").addClass("invalid numeric");
+            input.removeClass("valid").addClass("invalid");
         }
     });
 
