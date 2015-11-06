@@ -90,11 +90,9 @@ $().ready(function() {
             current_fs.hide();
         }
     });            
-
-
     
-    $('#form_cust_zip').on('input' , function() {
-        var input = $( this ) ;
+    $('#form_cust_zip').on('input', function() {
+        var input = $( this );
         var regex = /^\d{5}$/;
         input.val( input.val().replace(/[^0-9]/g, '' ) );
         var isZip = regex.test(input.val());
@@ -106,23 +104,78 @@ $().ready(function() {
         }
     });
     
+    $('#form_cust_height_in').on('input', function() {
+        var input = $( this );
+        input.val( input.val().replace(/[^0-9]/g, '' ) );  
+        if ( input.val() >= 0 && input.val() < 12) {
+            input.removeClass("invalid").addClass("valid");
+        }                    
+        else {
+            input.removeClass("valid").addClass("invalid");
+        }
+    });
+    
+    $('#form_cust_height_ft').on('input', function() {
+        var input = $( this );
+        input.val( input.val().replace(/[^0-9]/g, '' ) );                 
+    });
+
+    $('#form_cust_weight').on('input', function() {
+        var input = $( this );
+        input.val( input.val().replace(/[^0-9]/g, '' ) );  
+        if ( input.val() >= 40 && input.val() < 900 ) {
+            input.removeClass("invalid").addClass("valid");
+        }                    
+        else {
+            input.removeClass("valid").addClass("invalid");
+        }
+    });
+
+    $('#form_cust_ssn').on('input', function() {
+        var input = $( this );
+        input.val( input.val().replace(/[^0-9\-]/g, '' ) );
+
+        if (/^\d{4}$/.test(input.val())) {
+            input.val(input.val().substring(0, 3) + '-' + input.val().substring(3, 4) );
+        }
+        else if (/^\d{3}\-\d{3}$/.test(input.val())) {
+            input.val(input.val().substring(0, 6) + '-' + input.val().substring(6, 7) );
+        }
+        
+        var regex = /^\d{3}\-\d{2}\-\d{4}$/;
+        var isSSN = regex.test(input.val());
+        if ( isSSN ) {
+            input.removeClass("invalid").addClass("valid");
+        }                    
+        else {
+            input.removeClass("valid").addClass("invalid");
+        }
+    });
+
+    $('#form_cust_question_11l_n').change( function() {
+       $('#question_12').hide();
+    });
+    
+    $('#form_cust_question_11l_y').change( function() {
+       $('#question_12').show();
+    });
+    
     $('#form_cust_citizenship_us').change( function() {
         if ($(this).is(":checked")) {
             $('#form_cust_alien_num').val('');
-            $('#question15').hide();
+            $('#question_15').hide();
         }
         else {
-            $('#question15').show();
+            $('#question_15').show();
         }
-        
     });
 
     $('#form_cust_citizenship_other').change( function() {
         if ($(this).is(":checked")) {
-            $('#question14b').show();
+            $('#question_14b').show();
         }
         else {
-            $('#question14b').hide();
+            $('#question_14b').hide();
             $('#form_cust_citizenship_other_desc').val('');
 
         }

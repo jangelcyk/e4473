@@ -215,6 +215,10 @@ form.cmxform .gray * {
 }
 */
 
+#question_14b{
+    display:none;
+}
+
 #formsubmit{
     display:none;
 }

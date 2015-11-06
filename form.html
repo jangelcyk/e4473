@@ -188,10 +188,10 @@
                 <legend>4. Height</legend>
                 <p>
                     <label for="form_cust_height_ft">Feet</label>
-                    <input type="text" name="form_cust_height_ft" id="form_cust_height_ft" size="2" maxlength="2" type="number" />
+                    <input type="text" name="form_cust_height_ft" id="form_cust_height_ft" size="2" maxlength="1" type="number" />
                 <br />
                     <label for="form_cust_height_in">Inches</label>
-                    <input type="text" name="form_cust_height_in" id="form_cust_height_in" size="2" type="number" />
+                    <input type="text" name="form_cust_height_in" id="form_cust_height_in" size="2" maxlength="2" type="number" />
                 </p>
                 <legend>5. Weight</legend>
                 <p>
@@ -329,12 +329,14 @@
                     <label><input type="radio" name="form_cust_question_11l" id="form_cust_question_11l_y" value="Yes" />Yes</label>
                     <label><input type="radio" name="form_cust_question_11l" id="form_cust_question_11l_n" value="No" />No</label>
                 </p>
+                <div id="question_12">
                 <legend>12.</legend>
                 <p>
                     <label for="form_cust_question_12">If you are an alien admitted to the United States under a nonimmigrant visa, do you fall within any of the exceptions set forth in the instructions? <b>(If &quot;yes,&quot; the licensee must complete question 20c.)</b> <i>(See Instructions for Question 12.) If question 11.l. is answered with a &quot;no&quot; response, <b>then do NOT respond</b> to question 12 and proceed to question 13.</i></label>
                     <label><input type="radio" name="form_cust_question_12" id="form_cust_question_12_y" value="Yes" />Yes</label>
                     <label><input type="radio" name="form_cust_question_12" id="form_cust_question_12_n" value="No" />No</label>
                 </p>
+                </div>
                 <p align="right"><a class="btn btn-primary next">Next</a></p>
             </fieldset>
                 <!------- -->
@@ -411,12 +413,12 @@
                         Other
                     </label>
                 </p>
-                    <div id="question14b">
+                    <div id="question_14b">
                         <label for="form_cust_citizenship_other_desc" >(Specify Other)</label>
                         <input type="text" name="form_cust_citizenship_other_desc" id="form_cust_citizenship_other_desc" size="20" maxlength="20" />
                     </div>
                 
-                <div id="question15">
+                <div id="question_15">
                 <legend>15. If you are not a citizen of the United States, what is your U.S.-issued alien number or admission number?</legend>
                 <p>
                     <label for="form_cust_alien_num"></label>
