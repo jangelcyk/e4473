@@ -35,11 +35,11 @@
                 <legend>1. Transferee's Full Name</legend>
                 <p>
                     <label for="form_cust_last_name">Last Name</label>
-                    <input type="text" name="form_cust_last_name" id="form_cust_last_name" placeholder="Enter Last Name" size="20" required maxlength="20" autofocus="autofocus" />
+                    <input type="text" name="form_cust_last_name" id="form_cust_last_name" placeholder="Enter Last Name" size="20" maxlength="20" autofocus="autofocus" />
                 </p>
                 <p>
                     <label for="form_cust_first_name">First Name</label>
-                    <input type="text" name="form_cust_first_name" id="form_cust_first_name" placeholder="Enter First Name" size="20" required maxlength="20" />
+                    <input type="text" name="form_cust_first_name" id="form_cust_first_name" placeholder="Enter First Name" size="20" maxlength="20" />
                 </p>
                 <p>
                     <label for="form_cust_middle_name">Middle Name <i>(If no middle name, state "NMN")</i></label>
@@ -206,7 +206,7 @@
                 <legend>7. Birth Date</legend>
                 <p>
                         <label for="birthdate"></label>
-                        <input type="date" data-role="date" name="date" required id="birthdate" value="" />
+                        <input type="date" data-role="date" name="date" id="birthdate" value="" />
                 </p>
                 <p align="right"><a class="btn btn-primary next">Next</a></p>
             </fieldset>                
@@ -225,14 +225,14 @@
                 <legend>10.a. Ethnicity</legend>
                 <p>
                     <label>
-                    <input type="radio" name="form_cust_ethnicity" required id="form_cust_ethnicity_his" value="Hispanic or Latino" />Hispanic or Latino</label>
+                    <input type="radio" name="form_cust_ethnicity" id="form_cust_ethnicity_his" value="Hispanic or Latino" />Hispanic or Latino</label>
                     <label>
                     <input type="radio" name="form_cust_ethnicity" id="form_cust_ethnicity_nothis" value="Not Hispanic or Latino" />Not Hispanic or Latino</label>
                 </p>
                 <legend>10.b. Race <i>(Check one or more boxes.)</i></legend>
                 <p>
                     <label>
-                    <input type="checkbox" name="form_cust_race" id="form_cust_race_ai" required value="American Indian or Alaska Native" />American Indian or Alaska Native</label>
+                    <input type="checkbox" name="form_cust_race" id="form_cust_race_ai" value="American Indian or Alaska Native" />American Indian or Alaska Native</label>
                     <label>
                     <input type="checkbox" name="form_cust_race" id="form_cust_race_aa" value="Black or African American" />Black or African American</label>
                     <label>
@@ -252,26 +252,26 @@
                 <legend>11.a.</legend>
                 <p>
                     <label for="form_cust_question_11a">Are you the actual transferee/buyer of the firearm(s) listed on this form? <b>Warning: You are not the actual buyer if you are acquiring the firearm(s) on behalf of another person. If you are not the actual buyer, the dealer cannot transfer the firearm(s) to you.</b> <i>(See Instructions for Question 11.a.) Exception: <b>If you are picking up a repaired firearm(s)</b> for another person, you are <b>not</b> required to answer 11.a. and may proceed to question 11.b.</i></label>                                        
-                    <label><input type="radio" name="form_cust_question_11a" id="form_cust_question_11a" required value="Yes" />Yes</label>
-                    <label><input type="radio" name="form_cust_question_11a" id="form_cust_question_11a" value="No" />No</label>
+                    <label><input type="radio" name="form_cust_question_11a" id="form_cust_question_11a_y" value="Yes" />Yes</label>
+                    <label><input type="radio" name="form_cust_question_11a" id="form_cust_question_11a_n" value="No" />No</label>
                 </p>
                 <legend>11.b.</legend>
                 <p>
                     <label for="form_cust_question_11b">Are you under indictment or information in any court for a <b>felony</b>, or any other crime, for which the judge could imprison you for more than one year? <i>(See Instructions for Question 11.b.)</i></label>
-                    <label><input type="radio" name="form_cust_question_11b" id="form_cust_question_11b" required value="Yes" />Yes</label>
-                    <label><input type="radio" name="form_cust_question_11b" id="form_cust_question_11b" required value="No" />No</label>
+                    <label><input type="radio" name="form_cust_question_11b" id="form_cust_question_11b_y" value="Yes" />Yes</label>
+                    <label><input type="radio" name="form_cust_question_11b" id="form_cust_question_11b_n" value="No" />No</label>
                 </p>
                 <legend>11.c.</legend>
                 <p>
                     <label for="form_cust_question_11c">Have you ever been convicted in any court of a <b>felony</b>, or any other crime, for which the judge could have imprisoned you for more than one year, even if you received a shorter sentence including probation? <i>(See Instructions for Question 11.c.)</i></label>
-                    <label><input type="radio" name="form_cust_question_11c" id="form_cust_question_11c" required value="Yes" />Yes</label>
-                    <label><input type="radio" name="form_cust_question_11c" id="form_cust_question_11c" value="No" />No</label>
+                    <label><input type="radio" name="form_cust_question_11c" id="form_cust_question_11c_y" value="Yes" />Yes</label>
+                    <label><input type="radio" name="form_cust_question_11c" id="form_cust_question_11c_n" value="No" />No</label>
                 </p>
                 <legend>11.d.</legend>
                 <p>
                     <label for="form_cust_question_11d">Are you a fugitive from justice?</label>
-                    <label><input type="radio" name="form_cust_question_11d" id="form_cust_question_11d" required value="Yes" />Yes</label>
-                    <label><input type="radio" name="form_cust_question_11d" id="form_cust_question_11d" value="No" />No</label>
+                    <label><input type="radio" name="form_cust_question_11d" id="form_cust_question_11d_y" value="Yes" />Yes</label>
+                    <label><input type="radio" name="form_cust_question_11d" id="form_cust_question_11d_n" value="No" />No</label>
                 </p>
                 <p align="right"><a class="btn btn-primary next">Next</a></p>
             </fieldset>
@@ -280,26 +280,26 @@
                 <legend>11.e.</legend>
                 <p>
                     <label for="form_cust_question_11e">Are you an unlawful user of, or addicted to, marijuana or any depressant, stimulant, narcotic drug, or any other controlled substance</label>
-                    <label><input type="radio" name="form_cust_question_11e" id="form_cust_question_11e" required value="Yes" />Yes</label>
-                    <label><input type="radio" name="form_cust_question_11e" id="form_cust_question_11e" value="No" />No</label>
+                    <label><input type="radio" name="form_cust_question_11e" id="form_cust_question_11e_y" value="Yes" />Yes</label>
+                    <label><input type="radio" name="form_cust_question_11e" id="form_cust_question_11e_n" value="No" />No</label>
                 </p>
                 <legend>11.f.</legend>
                 <p>
                     <label for="form_cust_question_11f">Have you ever been adjudicated mentally defective <i>(which includes a determination by a court, board, commission, or other lawful authority that you are a danger to yourself or to others or are incompetent to manage your own affairs)</i> <b>OR</b> have you ever been committed to a mental institution? <i>(See Instructions for Question 11.f.)</i></label>
-                    <label><input type="radio" name="form_cust_question_11f" id="form_cust_question_11f" required value="Yes" />Yes</label>
-                    <label><input type="radio" name="form_cust_question_11f" id="form_cust_question_11f" value="No" />No</label>
+                    <label><input type="radio" name="form_cust_question_11f" id="form_cust_question_11f_y" value="Yes" />Yes</label>
+                    <label><input type="radio" name="form_cust_question_11f" id="form_cust_question_11f_n" value="No" />No</label>
                 </p>
                 <legend>11.g.</legend>
                 <p>
                     <label for="form_cust_question_11g">Have you been discharged from the Armed Forces under <b>dishonorable</b> conditions?</label>
-                    <label><input type="radio" name="form_cust_question_11g" id="form_cust_question_11g" required value="Yes" />Yes</label>
-                    <label><input type="radio" name="form_cust_question_11g" id="form_cust_question_11g" value="No" />No</label>
+                    <label><input type="radio" name="form_cust_question_11g" id="form_cust_question_11g_y" value="Yes" />Yes</label>
+                    <label><input type="radio" name="form_cust_question_11g" id="form_cust_question_11g_n" value="No" />No</label>
                 </p>
                 <legend>11.h.</legend>
                 <p>
                     <label for="form_cust_question_11h">Are you subject to a court order restraining you from harassing, stalking, or threatening your child or an intimate partner or child of such partner? <i>(See Instructions for Question 11.h.)</i></label>
-                    <label><input type="radio" name="form_cust_question_11h" id="form_cust_question_11h" required value="Yes" />Yes</label>
-                    <label><input type="radio" name="form_cust_question_11h" id="form_cust_question_11h" value="No" />No</label>
+                    <label><input type="radio" name="form_cust_question_11h" id="form_cust_question_11h_y" value="Yes" />Yes</label>
+                    <label><input type="radio" name="form_cust_question_11h" id="form_cust_question_11h_n" value="No" />No</label>
                 </p>
                 <p align="right"><a class="btn btn-primary next">Next</a></p>
             </fieldset>
@@ -308,32 +308,32 @@
                 <legend>11.i.</legend>
                 <p>
                     <label for="form_cust_question_11i">Have you ever been convicted in any court of a misdemeanor crime of domestic violence? <i>(See Instructions for Question 11.i.)</i></label>
-                    <label><input type="radio" name="form_cust_question_11i" id="form_cust_question_11i" required value="Yes" />Yes</label>
-                    <label><input type="radio" name="form_cust_question_11i" id="form_cust_question_11i" value="No" />No</label>
+                    <label><input type="radio" name="form_cust_question_11i" id="form_cust_question_11i_y" value="Yes" />Yes</label>
+                    <label><input type="radio" name="form_cust_question_11i" id="form_cust_question_11i_n" value="No" />No</label>
                 </p>
                 <legend>11.j.</legend>
                 <p>
                     <label for="form_cust_question_11j">Have you ever renounced your United States citizenship?</label>
-                    <label><input type="radio" name="form_cust_question_11j" id="form_cust_question_11j" required value="Yes" />Yes</label>
-                    <label><input type="radio" name="form_cust_question_11j" id="form_cust_question_11j" value="No" />No</label>
+                    <label><input type="radio" name="form_cust_question_11j" id="form_cust_question_11j_y" value="Yes" />Yes</label>
+                    <label><input type="radio" name="form_cust_question_11j" id="form_cust_question_11j_n" value="No" />No</label>
                 </p>
                 <legend>11.k.</legend>
                 <p>
                     <label for="form_cust_question_11k">Are you an alien <b>illegally</b> in the United States?</label>
-                    <label><input type="radio" name="form_cust_question_11k" id="form_cust_question_11k" required value="Yes" />Yes</label>
-                    <label><input type="radio" name="form_cust_question_11k" id="form_cust_question_11k" value="No" />No</label>
+                    <label><input type="radio" name="form_cust_question_11k" id="form_cust_question_11k_y" value="Yes" />Yes</label>
+                    <label><input type="radio" name="form_cust_question_11k" id="form_cust_question_11k_n" value="No" />No</label>
                 </p>
                 <legend>11.l.</legend>
                 <p>
                     <label for="form_cust_question_11l">Are you an alien admitted to the United States under a nonimmigrant visa? <i>(See Instructions for Question 11.l.) If you answered &quot;no&quot; to this question, do <b>NOT</b> respond to question 12 and proceed to question 13.</i></label>
-                    <label><input type="radio" name="form_cust_question_11l" id="form_cust_question_11l" required value="Yes" />Yes</label>
-                    <label><input type="radio" name="form_cust_question_11l" id="form_cust_question_11l" value="No" />No</label>
+                    <label><input type="radio" name="form_cust_question_11l" id="form_cust_question_11l_y" value="Yes" />Yes</label>
+                    <label><input type="radio" name="form_cust_question_11l" id="form_cust_question_11l_n" value="No" />No</label>
                 </p>
                 <legend>12.</legend>
                 <p>
                     <label for="form_cust_question_12">If you are an alien admitted to the United States under a nonimmigrant visa, do you fall within any of the exceptions set forth in the instructions? <b>(If &quot;yes,&quot; the licensee must complete question 20c.)</b> <i>(See Instructions for Question 12.) If question 11.l. is answered with a &quot;no&quot; response, <b>then do NOT respond</b> to question 12 and proceed to question 13.</i></label>
-                    <label><input type="radio" name="form_cust_question_12" id="form_cust_question_12" required value="Yes" />Yes</label>
-                    <label><input type="radio" name="form_cust_question_12" id="form_cust_question_12" value="No" />No</label>
+                    <label><input type="radio" name="form_cust_question_12" id="form_cust_question_12_y" value="Yes" />Yes</label>
+                    <label><input type="radio" name="form_cust_question_12" id="form_cust_question_12_n" value="No" />No</label>
                 </p>
                 <p align="right"><a class="btn btn-primary next">Next</a></p>
             </fieldset>
@@ -399,20 +399,30 @@
                 </p>
                 <legend>14. What is your country of citizenship? <i>(List/check more than one, if applicable.  If you are a citizen of the United States, proceed to question 16.)</i></legend>
                 <p>
-                    <label for="form_cust_citizenship"></label>
-                        <input type="checkbox" name="form_cust_citizenship" id="form_cust_citizenship" value="United States of America" />United States of America
+                    <label for="form_cust_citizenship_us">
+                    <input type="checkbox" name="form_cust_citizenship" id="form_cust_citizenship_us" value="United States of America" />
                     
-                    <label for="form_cust_citizenship"></label>
-                        <input type="checkbox" name="form_cust_citizenship" id="form_cust_citizenship" value="Other" />Other
+                        United States of America
+                    </label>
                     <br />
-                        <label for="form_cust_citizenship_other_desc" >(Specify)</label>
-                        <input type="text" name="form_cust_citizenship_other_desc" id="form_cust_citizenship_other_desc" size="20" maxlength="20" disabled="disabled" />
+                    <label for="form_cust_citizenship_other">
+                    <input type="checkbox" name="form_cust_citizenship" id="form_cust_citizenship_other" value="Other" />
+                    
+                        Other
+                    </label>
                 </p>
+                    <div id="question14b">
+                        <label for="form_cust_citizenship_other_desc" >(Specify Other)</label>
+                        <input type="text" name="form_cust_citizenship_other_desc" id="form_cust_citizenship_other_desc" size="20" maxlength="20" />
+                    </div>
+                
+                <div id="question15">
                 <legend>15. If you are not a citizen of the United States, what is your U.S.-issued alien number or admission number?</legend>
                 <p>
                     <label for="form_cust_alien_num"></label>
                     <input type="text" name="form_cust_alien_num" id="form_cust_alien_num" size="15" maxlength="15" />
                 </p>
+                </div>
             </fieldset>
 
             <b>I certify that my answers to Section A are true, correct, and complete. I have read and understand the Notices, Instructions, and Definitions on ATF Form 4473. I understand that answering &quot;yes&quot; to question 11.a. if I am not the actual buyer is a crime punishable as a felony under Federal law, and may also violate State and/or local law. I understand that a person who answers &quot;yes&quot; to any of the questions 11.b. through 11.k. is prohibited from purchasing or receiving a firearm. I understand that a person who answers &quot;yes&quot; to question 11.l. is prohibited from purchasing or receiving a firearm, unless the person also answers &quot;Yes&quot; to question 12. I also understand that making any false oral or written statement, or exhibiting any false or misrepresented identification with respect to this transaction, is a crime punishable as a felony under Federal law, and may also violate State and/or local law. I further understand that the repetitive purchase of firearms for the purpose of resale for livelihood and profit without a Federal firearms license is a violation of law <i>(See Instructions for Question 16)</i></b>
