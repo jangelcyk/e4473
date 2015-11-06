@@ -19,9 +19,15 @@ $().ready(function() {
                 form_cust_county: "required",
                 form_cust_state: "required",
                 form_cust_zip: "required",
-//                form_cust_place_of_birth: "required",
-//                form_cust_state_of_birth: "required",
-//                form_cust_foreign_country: "required",
+                form_cust_place_of_birth: {
+                    required: "#form_cust_foreign_country:blank"   
+                },
+                form_cust_state_of_birth: {
+                    required: "#form_cust_place_of_birth:filled"
+                },
+                form_cust_foreign_country: {
+                    required: "#form_cust_place_of_birth:blank"   
+                },
                 form_cust_height_ft: "required",
                 form_cust_height_in: "required",
                 form_cust_weight: "required",
@@ -44,13 +50,18 @@ $().ready(function() {
                 form_cust_question_11k: "required",
                 form_cust_question_11l: "required",
                 form_cust_question_12: "required",
-//                form_cust_state_residence: "required",
                 form_cust_citizenship: "required",
-                form_cust_alien_num: "required",
-                form_cust_state_residence: "required"
+                form_cust_citizenship_other_desc: {
+                    required: "#form_cust_citizenship_other:checked"
+                },
+                form_cust_alien_num: {
+                    required: "#form_cust_citizenship_us:unchecked"
+                }
             },
             messages: {
-                form_cust_middle_name: "This field is required. NMN if no middle name."
+                form_cust_middle_name: "This field is required. NMN if no middle name.",
+                form_cust_race: "Select one or more races.",
+                form_cust_place_of_birth: "Select only one of either U.S. city and state or foreign country code."
             }
         });
 
@@ -181,6 +192,30 @@ $().ready(function() {
         }
     });
     
+    $('#form_cust_place_of_birth').on('input', function() {
+        var input = $( this );
+        if ( /^\s*$/.test(input.val())) {
+           $('#form_cust_foreign_country').removeAttr("disabled");
+           $('#form_cust_state_of_birth').attr("disabled", "disabled");
+        }
+        else {
+            $('#form_cust_foreign_country').attr("disabled", "disabled");
+           $('#form_cust_state_of_birth').removeAttr("disabled");
+        }
+    });
+
+    $('#form_cust_foreign_country').on('input', function() {
+        var input = $( this );
+        if ( /^\s*$/.test(input.val())) {
+           $('#form_cust_place_of_birth').removeAttr("disabled");
+           $('#form_cust_state_of_birth').removeAttr("disabled");
+        }
+        else {
+            $('#form_cust_place_of_birth').attr("disabled", "disabled");
+           $('#form_cust_state_of_birth').attr("disabled", "disabled");
+        }
+    });
+
     
 });
 

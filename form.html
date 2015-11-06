@@ -128,7 +128,7 @@
                 <p>
                     <label for="form_cust_place_of_birth">U.S. City and State</label>
                     <input type="text" name="form_cust_place_of_birth" id="form_cust_place_of_birth" size="25" maxlength="25" />
-                    <select name="form_cust_state_of_birth" id="form_cust_state_of_birth" >
+                    <select name="form_cust_state_of_birth" id="form_cust_state_of_birth" disabled >
                         <option selected="selected" value>Choose State:</option>
                         <option value="AL">AL</option>
                         <option value="AK">AK</option>
@@ -182,7 +182,8 @@
                         <option value="WI">WI</option>
                         <option value="WY">WY</option>
                     </select>
-                    <b>-OR-</b><br />Foreign Country Code<br />
+                    <br /><b>-OR-</b><br />
+                    <label for="form_cust_foreign_country">Foreign Country Code</label>
                         <input type="text" name="form_cust_foreign_country" id="form_cust_foreign_country" size="20" maxlength="20" />
                 </p>
                 <legend>4. Height</legend>
@@ -401,10 +402,9 @@
                 </p>
                 <legend>14. What is your country of citizenship? <i>(List/check more than one, if applicable.  If you are a citizen of the United States, proceed to question 16.)</i></legend>
                 <p>
-                    <label for="form_cust_citizenship_us">
+                    <label for="form_cust_citizenship_us">United States of America
                     <input type="checkbox" name="form_cust_citizenship" id="form_cust_citizenship_us" value="United States of America" />
-                    
-                        United States of America
+                        
                     </label>
                     <br />
                     <label for="form_cust_citizenship_other">
