@@ -7,9 +7,11 @@
     <title>FCFS - e4473</title>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/tooltipster.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <!-- <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.css" /> -->
     <script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="js/jquery.tooltipster.min.js"></script>
 <!--    <script type="text/javascript" src="js/jquery.mobile-1.4.5.js"></script>-->
     <script type="text/javascript" src="js/jquery.validate.js"></script>
     <script type="text/javascript" src="js/f4473validation.js"></script>
@@ -32,7 +34,9 @@
             <input type="hidden" name="form_cust_num" value="108633931" />
             <input type="hidden" name="form_cust_pin" value="338" />
             <fieldset id="page1">
-                <legend>1. Transferee's Full Name</legend>
+                <legend>1. Transferee's Full Name
+                    <img src="images/icon-tooltip.png" id="tt-name" />
+                </legend>
                 <p>
                     <label for="form_cust_last_name">Last Name</label>
                     <input type="text" name="form_cust_last_name" id="form_cust_last_name" placeholder="Enter Last Name" size="20" maxlength="20" autofocus="autofocus" />
@@ -46,7 +50,9 @@
                     <input type="text" name="form_cust_middle_name" id="form_cust_middle_name" placeholder="Enter Middle Name" size="20" maxlength="20" />
                 </p>
 
-                <legend>2.  Current Residence Address <b>(U.S. Postal abbreviations are acceptable.  Cannot be a post office box.)</b></legend>
+                <legend>2.  Current Residence Address <b>(U.S. Postal abbreviations are acceptable.  Cannot be a post office box.)</b>
+                    <img src="images/icon-tooltip.png" id="tt-address" />
+                </legend>
                 <p>
                     <label for="form_cust_street_address">Number and Street Address</label>
                     <input type="text" name="form_cust_street_address" id="form_cust_street_address" size="25" maxlength="25" />
@@ -218,7 +224,9 @@
                 <p>
                     <input type="text" name="form_cust_ssn" id="form_cust_ssn" size="11" maxlength="11" />
                 </p>
-                <legend>9. Unique Personal Identification Number <i>(UPIN)</i> if applicable <i>(See Instructions for Question 9.)</i></legend>
+                <legend>9. Unique Personal Identification Number <i>(UPIN)</i> if applicable <i>(See Instructions for Question 9.)</i>
+                    <img src="images/icon-tooltip.png" id="tt-9" />
+                </legend>
                 <p>
                     <input type="text" name="form_cust_upin" id="form_cust_upin" size="20" maxlength="20" />
                 </p>
@@ -250,19 +258,25 @@
             <fieldset id="page4">
                 <legend>11. Answer questions 11.a. <i>(see exceptions)</i> through 11.l and 12 <i>(if applicable)</i> by checking or marking <b><i>&quot;yes&quot; or &quot;no&quot;</i></b> in the boxes to the right of the questions.</legend>
 
-                <legend>11.a.</legend>
+                <legend>11.a.
+                    <img src="images/icon-tooltip.png" id="tt-11a" />
+                </legend>
                 <p>
                     <label for="form_cust_question_11a">Are you the actual transferee/buyer of the firearm(s) listed on this form? <b>Warning: You are not the actual buyer if you are acquiring the firearm(s) on behalf of another person. If you are not the actual buyer, the dealer cannot transfer the firearm(s) to you.</b> <i>(See Instructions for Question 11.a.) Exception: <b>If you are picking up a repaired firearm(s)</b> for another person, you are <b>not</b> required to answer 11.a. and may proceed to question 11.b.</i></label>                                        
                     <label><input type="radio" name="form_cust_question_11a" id="form_cust_question_11a_y" value="Yes" />Yes</label>
                     <label><input type="radio" name="form_cust_question_11a" id="form_cust_question_11a_n" value="No" />No</label>
                 </p>
-                <legend>11.b.</legend>
+                <legend>11.b.
+                    <img src="images/icon-tooltip.png" id="tt-11b" />
+                </legend>
                 <p>
                     <label for="form_cust_question_11b">Are you under indictment or information in any court for a <b>felony</b>, or any other crime, for which the judge could imprison you for more than one year? <i>(See Instructions for Question 11.b.)</i></label>
                     <label><input type="radio" name="form_cust_question_11b" id="form_cust_question_11b_y" value="Yes" />Yes</label>
                     <label><input type="radio" name="form_cust_question_11b" id="form_cust_question_11b_n" value="No" />No</label>
                 </p>
-                <legend>11.c.</legend>
+                <legend>11.c.
+                    <img src="images/icon-tooltip.png" id="tt-11c" />
+                </legend>
                 <p>
                     <label for="form_cust_question_11c">Have you ever been convicted in any court of a <b>felony</b>, or any other crime, for which the judge could have imprisoned you for more than one year, even if you received a shorter sentence including probation? <i>(See Instructions for Question 11.c.)</i></label>
                     <label><input type="radio" name="form_cust_question_11c" id="form_cust_question_11c_y" value="Yes" />Yes</label>
@@ -284,7 +298,9 @@
                     <label><input type="radio" name="form_cust_question_11e" id="form_cust_question_11e_y" value="Yes" />Yes</label>
                     <label><input type="radio" name="form_cust_question_11e" id="form_cust_question_11e_n" value="No" />No</label>
                 </p>
-                <legend>11.f.</legend>
+                <legend>11.f.
+                    <img src="images/icon-tooltip.png" id="tt-11f" />
+                </legend>
                 <p>
                     <label for="form_cust_question_11f">Have you ever been adjudicated mentally defective <i>(which includes a determination by a court, board, commission, or other lawful authority that you are a danger to yourself or to others or are incompetent to manage your own affairs)</i> <b>OR</b> have you ever been committed to a mental institution? <i>(See Instructions for Question 11.f.)</i></label>
                     <label><input type="radio" name="form_cust_question_11f" id="form_cust_question_11f_y" value="Yes" />Yes</label>
@@ -296,7 +312,9 @@
                     <label><input type="radio" name="form_cust_question_11g" id="form_cust_question_11g_y" value="Yes" />Yes</label>
                     <label><input type="radio" name="form_cust_question_11g" id="form_cust_question_11g_n" value="No" />No</label>
                 </p>
-                <legend>11.h.</legend>
+                <legend>11.h.
+                    <img src="images/icon-tooltip.png" id="tt-11h" />
+                </legend>
                 <p>
                     <label for="form_cust_question_11h">Are you subject to a court order restraining you from harassing, stalking, or threatening your child or an intimate partner or child of such partner? <i>(See Instructions for Question 11.h.)</i></label>
                     <label><input type="radio" name="form_cust_question_11h" id="form_cust_question_11h_y" value="Yes" />Yes</label>
@@ -306,7 +324,9 @@
             </fieldset>
                 <!------- -->
             <fieldset id="page6">
-                <legend>11.i.</legend>
+                <legend>11.i.
+                    <img src="images/icon-tooltip.png" id="tt-11i" />
+                </legend>
                 <p>
                     <label for="form_cust_question_11i">Have you ever been convicted in any court of a misdemeanor crime of domestic violence? <i>(See Instructions for Question 11.i.)</i></label>
                     <label><input type="radio" name="form_cust_question_11i" id="form_cust_question_11i_y" value="Yes" />Yes</label>
@@ -324,14 +344,18 @@
                     <label><input type="radio" name="form_cust_question_11k" id="form_cust_question_11k_y" value="Yes" />Yes</label>
                     <label><input type="radio" name="form_cust_question_11k" id="form_cust_question_11k_n" value="No" />No</label>
                 </p>
-                <legend>11.l.</legend>
+                <legend>11.l.
+                    <img src="images/icon-tooltip.png" id="tt-11l" />
+                </legend>
                 <p>
                     <label for="form_cust_question_11l">Are you an alien admitted to the United States under a nonimmigrant visa? <i>(See Instructions for Question 11.l.) If you answered &quot;no&quot; to this question, do <b>NOT</b> respond to question 12 and proceed to question 13.</i></label>
                     <label><input type="radio" name="form_cust_question_11l" id="form_cust_question_11l_y" value="Yes" />Yes</label>
                     <label><input type="radio" name="form_cust_question_11l" id="form_cust_question_11l_n" value="No" />No</label>
                 </p>
                 <div id="question_12">
-                <legend>12.</legend>
+                <legend>12.
+                    <img src="images/icon-tooltip.png" id="tt-12" />
+                </legend>
                 <p>
                     <label for="form_cust_question_12">If you are an alien admitted to the United States under a nonimmigrant visa, do you fall within any of the exceptions set forth in the instructions? <b>(If &quot;yes,&quot; the licensee must complete question 20c.)</b> <i>(See Instructions for Question 12.) If question 11.l. is answered with a &quot;no&quot; response, <b>then do NOT respond</b> to question 12 and proceed to question 13.</i></label>
                     <label><input type="radio" name="form_cust_question_12" id="form_cust_question_12_y" value="Yes" />Yes</label>
@@ -342,7 +366,9 @@
             </fieldset>
                 <!------- -->
             <fieldset id="page7">
-                <legend>13. What is your State of residence <i>(if any)?  (See instructions for Question 13.)</i></legend>
+                <legend>13. What is your State of residence <i>(if any)?  (See instructions for Question 13.)</i>
+                    <img src="images/icon-tooltip.png" id="tt-13" />
+                </legend>
                 <p>
                     <label for="form_cust_state_residence"></label>
                     <select name="form_cust_state_residence" id="form_cust_state_residence">
@@ -425,7 +451,7 @@
                 </div>
             </fieldset>
 
-            <b>I certify that my answers to Section A are true, correct, and complete. I have read and understand the Notices, Instructions, and Definitions on ATF Form 4473. I understand that answering &quot;yes&quot; to question 11.a. if I am not the actual buyer is a crime punishable as a felony under Federal law, and may also violate State and/or local law. I understand that a person who answers &quot;yes&quot; to any of the questions 11.b. through 11.k. is prohibited from purchasing or receiving a firearm. I understand that a person who answers &quot;yes&quot; to question 11.l. is prohibited from purchasing or receiving a firearm, unless the person also answers &quot;Yes&quot; to question 12. I also understand that making any false oral or written statement, or exhibiting any false or misrepresented identification with respect to this transaction, is a crime punishable as a felony under Federal law, and may also violate State and/or local law. I further understand that the repetitive purchase of firearms for the purpose of resale for livelihood and profit without a Federal firearms license is a violation of law <i>(See Instructions for Question 16)</i></b>
+            <b>I certify that my answers to Section A are true, correct, and complete. I have read and understand the Notices, Instructions, and Definitions on ATF Form 4473. I understand that answering &quot;yes&quot; to question 11.a. if I am not the actual buyer is a crime punishable as a felony under Federal law, and may also violate State and/or local law. I understand that a person who answers &quot;yes&quot; to any of the questions 11.b. through 11.k. is prohibited from purchasing or receiving a firearm. I understand that a person who answers &quot;yes&quot; to question 11.l. is prohibited from purchasing or receiving a firearm, unless the person also answers &quot;Yes&quot; to question 12. I also understand that making any false oral or written statement, or exhibiting any false or misrepresented identification with respect to this transaction, is a crime punishable as a felony under Federal law, and may also violate State and/or local law. I further understand that the repetitive purchase of firearms for the purpose of resale for livelihood and profit without a Federal firearms license is a violation of law <i>(See Instructions for Question 16)</i></b> <img src="images/icon-tooltip.png" id="tt-13" />
             <br />
             <br />
             <input type="submit" value="Agree and Certify" class="submit" id="formsubmit" />
