@@ -77,39 +77,47 @@ $().ready(function() {
         });
         
         if (form.valid() == true){
-            if ($('#page1').is(":visible")){
-                current_fs = $('#page1');
-                next_fs = $('#page2');
-            }
-            else if ($('#page2').is(":visible")){
-                current_fs = $('#page2');
-                next_fs = $('#page3');
-            }
-            else if ($('#page3').is(":visible")){
-                current_fs = $('#page3');
-                next_fs = $('#page4');
-            }
-            else if ($('#page4').is(":visible")){
-                current_fs = $('#page4');
-                next_fs = $('#page5');
-            }
-            else if ($('#page5').is(":visible")){
-                current_fs = $('#page5');
-                next_fs = $('#page6');
-            }
-            else if ($('#page6').is(":visible")){
-                current_fs = $('#page6');
-                next_fs = $('#page7');
-                $('#formsubmit').show();
-            }
-            else if ($('#page7').is(":visible")){
-                current_fs = $('#page7');
-                next_fs = $('#page7');
-                $('#formsubmit').show();
-            }
+            
+            // Verify customer is content with their answers before proceeding.
 
-            next_fs.show(); 
-            current_fs.hide();
+            var verified = confirm("Are you sure you have answered the questions correctly");
+            
+            if (verified) {
+            
+                if ($('#page1').is(":visible")){
+                    current_fs = $('#page1');
+                    next_fs = $('#page2');
+                }
+                else if ($('#page2').is(":visible")){
+                    current_fs = $('#page2');
+                    next_fs = $('#page3');
+                }
+                else if ($('#page3').is(":visible")){
+                    current_fs = $('#page3');
+                    next_fs = $('#page4');
+                }
+                else if ($('#page4').is(":visible")){
+                    current_fs = $('#page4');
+                    next_fs = $('#page5');
+                }
+                else if ($('#page5').is(":visible")){
+                    current_fs = $('#page5');
+                    next_fs = $('#page6');
+                }
+                else if ($('#page6').is(":visible")){
+                    current_fs = $('#page6');
+                    next_fs = $('#page7');
+                    $('#formsubmit').show();
+                }
+                else if ($('#page7').is(":visible")){
+                    current_fs = $('#page7');
+                    next_fs = $('#page7');
+                    $('#formsubmit').show();
+                }
+
+                next_fs.show(); 
+                current_fs.hide();
+            }
         }
     });            
     
