@@ -189,6 +189,7 @@ form.cmxform .gray * {
     color: gray;
 }
 
+/*
 #page2{
     display:none;
 }
@@ -212,6 +213,7 @@ form.cmxform .gray * {
 #page7{
     display:none;
 }
+*/
 
 #question_14b{
     display:none;
@@ -221,11 +223,11 @@ form.cmxform .gray * {
     display:none;
 }
 
-input.invalid {
+input.invalidx {
     border: 2px solid red;
 }
 
-input.valid {
+input.validx {
     border: 2px solid green;
 }
 

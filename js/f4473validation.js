@@ -18,7 +18,10 @@ $().ready(function() {
                 form_cust_city: "required", 
                 form_cust_county: "required",
                 form_cust_state: "required",
-                form_cust_zip: "required",
+                form_cust_zip: {
+                    required: true,
+                    minlength: 5
+                },
                 form_cust_place_of_birth: {
                     required: "#form_cust_foreign_country:blank"   
                 },
@@ -30,7 +33,10 @@ $().ready(function() {
                 },
                 form_cust_height_ft: "required",
                 form_cust_height_in: "required",
-                form_cust_weight: "required",
+                form_cust_weight: {
+                    required: true,
+                    minlength: 2
+                },
                 form_cust_sex: "required",
                 birthdate: "required",
 //                form_cust_ssn: "requrired",
@@ -61,7 +67,8 @@ $().ready(function() {
             messages: {
                 form_cust_middle_name: "This field is required. NMN if no middle name.",
                 form_cust_race: "Select one or more races.",
-                form_cust_place_of_birth: "Select only one of either U.S. city and state or foreign country code."
+                form_cust_place_of_birth: "Select only one of either U.S. city and state or foreign country code.",
+                form_cust_zip: "Enter a valid 5 digit ZIP Code."
             }
         });
 
@@ -108,21 +115,21 @@ $().ready(function() {
         input.val( input.val().replace(/[^0-9]/g, '' ) );
         var isZip = regex.test(input.val());
         if (isZip) {
-            input.removeClass("invalid").addClass("valid");
+            input.removeClass("invalidx").addClass("validx");
         }
         else {
-            input.removeClass("valid").addClass("invalid");
+            input.removeClass("validx").addClass("invalidx");
         }
     });
     
     $('#form_cust_height_in').on('input', function() {
         var input = $( this );
         input.val( input.val().replace(/[^0-9]/g, '' ) );  
-        if ( input.val() >= 0 && input.val() < 12) {
-            input.removeClass("invalid").addClass("valid");
+        if ( Number(input.val()) >= 0 && Number(input.val()) < 12) {
+            input.removeClass("invalidx").addClass("validx");
         }                    
         else {
-            input.removeClass("valid").addClass("invalid");
+            input.removeClass("validx").addClass("invalidx");
         }
     });
     
@@ -135,10 +142,10 @@ $().ready(function() {
         var input = $( this );
         input.val( input.val().replace(/[^0-9]/g, '' ) );  
         if ( input.val() >= 40 && input.val() < 900 ) {
-            input.removeClass("invalid").addClass("valid");
+            input.removeClass("invalidx").addClass("validx");
         }                    
         else {
-            input.removeClass("valid").addClass("invalid");
+            input.removeClass("validx").addClass("invalidx");
         }
     });
 
@@ -156,10 +163,10 @@ $().ready(function() {
         var regex = /^\d{3}\-\d{2}\-\d{4}$/;
         var isSSN = regex.test(input.val());
         if ( isSSN ) {
-            input.removeClass("invalid").addClass("valid");
+            input.removeClass("invalidx").addClass("validx");
         }                    
         else {
-            input.removeClass("valid").addClass("invalid");
+            input.removeClass("validx").addClass("invalidx");
         }
     });
 
