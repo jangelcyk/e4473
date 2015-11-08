@@ -16,7 +16,8 @@
     <script type="text/javascript" src="js/jquery.validate.js"></script>
     <script type="text/javascript" src="js/f4473validation.js"></script>
 
-    <style>#atfForm{width:100%;}#atfForm label{width:50%;}#atfForm label.error,#atfForm  label.error{display:none;margin-left:25px;}</style>    
+    <style>#atfForm{width:100%;}#atfForm label{width:50%;}test{width:25%}#atfForm label.error,#atfForm label.error{display:none;margin-left:auto;}</style>
+<!--    <style>#commentForm{width:500px;}#commentForm label{width:250px;}#commentForm label.error,#commentForm input.submit{margin-left:253px;}#signupForm{width:670px;}#signupForm label.error{margin-left:10px;width:auto;display:inline;}#newsletter_topics label.error{display:none;margin-left:103px;}</style>-->
 </head>
 
 <body>
@@ -40,14 +41,17 @@
                 <p>
                     <label for="form_cust_last_name">Last Name</label>
                     <input type="text" name="form_cust_last_name" id="form_cust_last_name" placeholder="Enter Last Name" size="20" maxlength="20" autofocus="autofocus" />
+                    <span id="invalid-form_cust_last_name"></span>
                 </p>
                 <p>
                     <label for="form_cust_first_name">First Name</label>
                     <input type="text" name="form_cust_first_name" id="form_cust_first_name" placeholder="Enter First Name" size="20" maxlength="20" />
+                    <span id="invalid-form_cust_first_name"></span>
                 </p>
                 <p>
                     <label for="form_cust_middle_name">Middle Name <i>(If no middle name, state "NMN")</i></label>
                     <input type="text" name="form_cust_middle_name" id="form_cust_middle_name" placeholder="Enter Middle Name" size="20" maxlength="20" />
+                    <span id="invalid-form_cust_middle_name"></span>
                 </p>
 
                 <legend>2.  Current Residence Address <b>(U.S. Postal abbreviations are acceptable.  Cannot be a post office box.)</b>
@@ -56,14 +60,17 @@
                 <p>
                     <label for="form_cust_street_address">Number and Street Address</label>
                     <input type="text" name="form_cust_street_address" id="form_cust_street_address" size="25" maxlength="25" />
+                    <span id="invalid-form_cust_street_address"></span>
                 </p>
                 <p>
                     <label for="form_cust_city">City</label>
                     <input type="text" name="form_cust_city" id="form_cust_city" size="20" maxlength="20" />
+                    <span id="invalid-form_cust_city"></span>
                 </p>
                 <p>
                     <label for="form_cust_county">County</label>
                     <input type="text" name="form_cust_county" id="form_cust_county" size="20" maxlength="20" />
+                    <span id="invalid-form_cust_county"></span>
                 </p>
                 <p>
                     <label for="form_cust_state">State</label>
@@ -121,10 +128,12 @@
                             <option value="WI">WI</option>
                             <option value="WY">WY</option>
                         </select>
+                        <span id="invalid-form_cust_state"></span>
                 </p>
                 <p>
                     <label for="form_cust_zip">ZIP Code</label>
                     <input type="text" name="form_cust_zip" id="form_cust_zip" size="5" maxlength="5"  />
+                    <span id="invalid-form_cust_zip"></span>
                 </p>
                 <p align="right"><a class="btn btn-primary next">Next</a></p>
             </fieldset>
@@ -134,6 +143,7 @@
                 <p>
                     <label for="form_cust_place_of_birth">U.S. City and State</label>
                     <input type="text" name="form_cust_place_of_birth" id="form_cust_place_of_birth" size="25" maxlength="25" />
+                    <span id="invalid-form_cust_place_of_birth"></span>
                     <select name="form_cust_state_of_birth" id="form_cust_state_of_birth" disabled >
                         <option selected="selected" value>Choose State:</option>
                         <option value="AL">AL</option>
@@ -188,32 +198,39 @@
                         <option value="WI">WI</option>
                         <option value="WY">WY</option>
                     </select>
+                    <span id="invalid-form_cust_zip"></span>
                     <br /><b>-OR-</b><br />
                     <label for="form_cust_foreign_country">Foreign Country Code</label>
                         <input type="text" name="form_cust_foreign_country" id="form_cust_foreign_country" size="20" maxlength="20" />
+                    <span id="invalid-form_cust_foreign_country"></span>
                 </p>
                 <legend>4. Height</legend>
                 <p>
                     <label for="form_cust_height_ft">Feet</label>
                     <input type="text" name="form_cust_height_ft" id="form_cust_height_ft" size="5" maxlength="1" type="number" />
+                    <span id="invalid-form_cust_height_ft"></span>
                 <br />
                     <label for="form_cust_height_in">Inches</label>
                     <input type="text" name="form_cust_height_in" id="form_cust_height_in" size="5" maxlength="2" type="number" />
+                    <span id="invalid-form_cust_height_in"></span>
                 </p>
                 <legend>5. Weight</legend>
                 <p>
                     <label for="form_cust_weight">Pounds</label>
                     <input type="text" name="form_cust_weight" id="form_cust_weight" size="5" maxlength="3" type="number" />
+                    <span id="invalid-form_cust_weight"></span>
                 </p>
                 <legend>6. Gender</legend>
                 <p>
                         <label><input type="radio" name="form_cust_sex" id="form_cust_sex_male" value="Male" />Male</label>
                         <label><input type="radio" name="form_cust_sex" id="form_cust_sex_female" value="Female" />Female</label>
+                        <span id="invalid-form_cust_sex"></span>
                 </p>
                 <legend>7. Birth Date</legend>
                 <p>
                         <label for="birthdate"></label>
-                        <input type="date" data-role="date" name="date" id="birthdate" value="" />
+                        <input type="date" data-role="date" name="birthdate" id="birthdate" value="" />
+                        <span id="invalid-birthdate"></span>
                 </p>
                 <p align="right"><a class="btn btn-primary next">Next</a></p>
             </fieldset>                
@@ -223,20 +240,23 @@
                 <legend>8. Social Security Number <i>(<b>Optional</b>, but will help prevent misidentification)</i></legend>
                 <p>
                     <input type="text" name="form_cust_ssn" id="form_cust_ssn" size="11" maxlength="11" />
+                    <span id="invalid-form_cust_ssn"></span>
                 </p>
                 <legend>9. Unique Personal Identification Number <i>(UPIN)</i> if applicable <i>(See Instructions for Question 9.)</i>
                     <img src="images/icon-tooltip.png" id="tt-9" />
                 </legend>
                 <p>
                     <input type="text" name="form_cust_upin" id="form_cust_upin" size="20" maxlength="20" />
+                    <span id="invalid-form_cust_upin"></span>
                 </p>
 
                 <legend>10.a. Ethnicity</legend>
                 <p>
-                    <label>
+                    <label for="form_cust_ethnicity_his">
                     <input type="radio" name="form_cust_ethnicity" id="form_cust_ethnicity_his" value="Hispanic or Latino" />Hispanic or Latino</label>
-                    <label>
+                    <label for="form_cust_ethnicity_nothis">
                     <input type="radio" name="form_cust_ethnicity" id="form_cust_ethnicity_nothis" value="Not Hispanic or Latino" />Not Hispanic or Latino</label>
+                    <span id="invalid-form_cust_ethnicity"></span>
                 </p>
                 <legend>10.b. Race <i>(Check one or more boxes.)</i></legend>
                 <p>
@@ -250,6 +270,7 @@
                     <input type="checkbox" name="form_cust_race" id="form_cust_race_as" value="Asian" />Asian</label>
                     <label>
                     <input type="checkbox" name="form_cust_race" id="form_cust_race_hi" value="Native Hawaiian or Other Pacific Islander" />Native Hawaiian or Other Pacific Islander</label>
+                    <span id="invalid-form_cust_race"></span>
                 </p>
                 <p align="right"><a class="btn btn-primary next">Next</a></p>
             </fieldset>
@@ -262,11 +283,13 @@
                     <img src="images/icon-tooltip.png" id="tt-11a" />
                 </legend>
                 <p>
-                    <label for="form_cust_question_11a">Are you the actual transferee/buyer of the firearm(s) listed on this form? <b>Warning: You are not the actual buyer if you are acquiring the firearm(s) on behalf of another person. If you are not the actual buyer, the dealer cannot transfer the firearm(s) to you.</b> <i>(See Instructions for Question 11.a.) Exception: <b>If you are picking up a repaired firearm(s)</b> for another person, you are <b>not</b> required to answer 11.a. and may proceed to question 11.b.</i></label>                                        
+                    <label for="form_cust_question_11a">Are you the actual transferee/buyer of the firearm(s) listed on this form? <b>Warning: You are not the actual buyer if you are acquiring the firearm(s) on behalf of another person. If you are not the actual buyer, the dealer cannot transfer the firearm(s) to you.</b> <i>(See Instructions for Question 11.a.) Exception: <b>If you are picking up a repaired firearm(s)</b> for another person, you are <b>not</b> required to answer 11.a. and may proceed to question 11.b.</i></label>
                     <input type="radio" name="form_cust_question_11a" id="form_cust_question_11a_y" value="Yes" />Yes
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     <input type="radio" name="form_cust_question_11a" id="form_cust_question_11a_n" value="No" />No
+                    <span id="invalid-form_cust_question_11a"></span>
                 </p>
+                
                 <legend>11.b.
                     <img src="images/icon-tooltip.png" id="tt-11b" />
                 </legend>
@@ -275,6 +298,7 @@
                     <input type="radio" name="form_cust_question_11b" id="form_cust_question_11b_y" value="Yes" />Yes
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     <input type="radio" name="form_cust_question_11b" id="form_cust_question_11b_n" value="No" />No
+                    <span id="invalid-form_cust_question_11b"></span>
                 </p>
                 <legend>11.c.
                     <img src="images/icon-tooltip.png" id="tt-11c" />
@@ -284,6 +308,7 @@
                     <input type="radio" name="form_cust_question_11c" id="form_cust_question_11c_y" value="Yes" />Yes
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     <input type="radio" name="form_cust_question_11c" id="form_cust_question_11c_n" value="No" />No
+                    <span id="invalid-form_cust_question_11c"></span>
                 </p>
                 <legend>11.d.</legend>
                 <p>
@@ -291,6 +316,7 @@
                     <input type="radio" name="form_cust_question_11d" id="form_cust_question_11d_y" value="Yes" />Yes
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     <input type="radio" name="form_cust_question_11d" id="form_cust_question_11d_n" value="No" />No
+                    <span id="invalid-form_cust_question_11d"></span>
                 </p>
                 <p align="right"><a class="btn btn-primary next">Next</a></p>
             </fieldset>
@@ -302,6 +328,7 @@
                     <input type="radio" name="form_cust_question_11e" id="form_cust_question_11e_y" value="Yes" />Yes
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     <input type="radio" name="form_cust_question_11e" id="form_cust_question_11e_n" value="No" />No
+                    <span id="invalid-form_cust_question_11e"></span>
                 </p>
                 <legend>11.f.
                     <img src="images/icon-tooltip.png" id="tt-11f" />
@@ -311,6 +338,7 @@
                     <input type="radio" name="form_cust_question_11f" id="form_cust_question_11f_y" value="Yes" />Yes
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     <input type="radio" name="form_cust_question_11f" id="form_cust_question_11f_n" value="No" />No
+                    <span id="invalid-form_cust_question_11f"></span>
                 </p>
                 <legend>11.g.</legend>
                 <p>
@@ -318,6 +346,7 @@
                     <input type="radio" name="form_cust_question_11g" id="form_cust_question_11g_y" value="Yes" />Yes
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     <input type="radio" name="form_cust_question_11g" id="form_cust_question_11g_n" value="No" />No
+                    <span id="invalid-form_cust_question_11g"></span>
                 </p>
                 <legend>11.h.
                     <img src="images/icon-tooltip.png" id="tt-11h" />
@@ -327,6 +356,7 @@
                     <input type="radio" name="form_cust_question_11h" id="form_cust_question_11h_y" value="Yes" />Yes
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     <input type="radio" name="form_cust_question_11h" id="form_cust_question_11h_n" value="No" />No
+                    <span id="invalid-form_cust_question_11h"></span>
                 </p>
                 <p align="right"><a class="btn btn-primary next">Next</a></p>
             </fieldset>
@@ -340,6 +370,7 @@
                     <input type="radio" name="form_cust_question_11i" id="form_cust_question_11i_y" value="Yes" />Yes
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     <input type="radio" name="form_cust_question_11i" id="form_cust_question_11i_n" value="No" />No
+                    <span id="invalid-form_cust_question_11i"></span>
                 </p>
                 <legend>11.j.</legend>
                 <p>
@@ -347,6 +378,7 @@
                     <input type="radio" name="form_cust_question_11j" id="form_cust_question_11j_y" value="Yes" />Yes
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     <input type="radio" name="form_cust_question_11j" id="form_cust_question_11j_n" value="No" />No
+                    <span id="invalid-form_cust_question_11j"></span>
                 </p>
                 <legend>11.k.</legend>
                 <p>
@@ -354,6 +386,7 @@
                     <input type="radio" name="form_cust_question_11k" id="form_cust_question_11k_y" value="Yes" />Yes
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     <input type="radio" name="form_cust_question_11k" id="form_cust_question_11k_n" value="No" />No
+                    <span id="invalid-form_cust_question_11k"></span>
                 </p>
                 <legend>11.l.
                     <img src="images/icon-tooltip.png" id="tt-11l" />
@@ -363,6 +396,7 @@
                     <input type="radio" name="form_cust_question_11l" id="form_cust_question_11l_y" value="Yes" />Yes
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     <input type="radio" name="form_cust_question_11l" id="form_cust_question_11l_n" value="No" />No
+                    <span id="invalid-form_cust_question_11l"></span>
                 </p>
                 <div id="question_12">
                 <legend>12.
@@ -373,6 +407,7 @@
                     <input type="radio" name="form_cust_question_12" id="form_cust_question_12_y" value="Yes" />Yes
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     <input type="radio" name="form_cust_question_12" id="form_cust_question_12_n" value="No" />No
+                    <span id="invalid-form_cust_question_12"></span>
                 </p>
                 </div>
                 <p align="right"><a class="btn btn-primary next">Next</a></p>
@@ -437,7 +472,8 @@
                             <option value="WV">WV</option>
                             <option value="WI">WI</option>
                             <option value="WY">WY</option>
-                        </select>
+                    </select>
+                    <span id="invalid-form_cust_state_residence"></span>
                 </p>
                 <legend>14. What is your country of citizenship? <i>(List/check more than one, if applicable.  If you are a citizen of the United States, proceed to question 16.)</i></legend>
                 <p>
@@ -450,10 +486,12 @@
                     <input type="checkbox" name="form_cust_citizenship" id="form_cust_citizenship_other" value="Other" />
                         Other
                     </label>
+                    <span id="invalid-form_cust_citizenship"></span>
                 </p>
                     <div id="question_14b">
                         <label for="form_cust_citizenship_other_desc" >(Specify Other)</label>
                         <input type="text" name="form_cust_citizenship_other_desc" id="form_cust_citizenship_other_desc" size="20" maxlength="20" />
+                        <span id="invalid-form_cust_citizenship_other_desc"></span>
                     </div>
                 
                 <div id="question_15">
@@ -461,6 +499,7 @@
                 <p>
                     <label for="form_cust_alien_num"></label>
                     <input type="text" name="form_cust_alien_num" id="form_cust_alien_num" size="15" maxlength="15" />
+                    <span id="invalid-form_cust_alien_num"></span>
                 </p>
                 </div>
             </fieldset>
