@@ -7,6 +7,14 @@ $.validator.setDefaults({
 
 $().ready(function() {
 
+    $.validator.addMethod("ssn", function(value, element) {
+        return this.optional(element) || /^\d{3}\-\d{2}\-\d{4}$/.test(value);
+    }, "The SSN Entered is an invalid format.");
+    
+    $.validator.addMethod("inches", function(value, element) {
+        return this.optional(element) || ( Number(value) >= 0 && Number(value) < 12);
+    }, "Valid inches are between 0 and 11.");
+    
     $(".next").click(function(){
         var form = $("#atfForm");
         form.validate({
@@ -33,14 +41,19 @@ $().ready(function() {
                     required: "#form_cust_place_of_birth:blank"   
                 },
                 form_cust_height_ft: "required",
-                form_cust_height_in: "required",
+                form_cust_height_in: {
+                    required: true,
+                    inches: true
+                },
                 form_cust_weight: {
                     required: true,
                     minlength: 2
                 },
                 form_cust_sex: "required",
                 birthdate: "required",
-//                form_cust_ssn: "requrired",
+                form_cust_ssn: {
+                    ssn: true
+                },
 //                form_cust_upin: "required", 
                 form_cust_ethnicity: "required",
                 form_cust_race: "required",
