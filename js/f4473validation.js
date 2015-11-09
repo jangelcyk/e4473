@@ -7,42 +7,70 @@ $.validator.setDefaults({
 
 $().ready(function() {
 
+    // validate ssn in proper format 123-12-1234
     $.validator.addMethod("ssn", function(value, element) {
         return this.optional(element) || /^\d{3}\-\d{2}\-\d{4}$/.test(value);
     }, "The SSN Entered is an invalid format.");
     
+    // validate inches between 0 and 11
     $.validator.addMethod("inches", function(value, element) {
         return this.optional(element) || ( Number(value) >= 0 && Number(value) < 12);
     }, "Valid inches are between 0 and 11.");
 
+    // validate numerical value > 0
     $.validator.addMethod("nonzero", function(value, element) {
         return this.optional(element) || value > 0 ;
     }, "Please enter a valid birth date.");
+    
+    // validate non-whitespace is entered
+    $.validator.addMethod("nonblank", function(value, element) {
+        return this.optional(element) || !(/^\s+$/.test(value));
+    }, "This field is required.");
     
     $(".next").click(function(){
         var form = $("#atfForm");
         form.validate({
             
             rules: {
-                form_cust_last_name: "required",
-                form_cust_first_name: "required",
-                form_cust_middle_name: "required",
-                form_cust_street_address: "required",
-                form_cust_city: "required", 
-                form_cust_county: "required",
+                form_cust_last_name: {
+                    required: true,
+                    nonblank: true
+                },
+                form_cust_first_name: {
+                    required: true,
+                    nonblank: true
+                },
+                form_cust_middle_name: {
+                    required: true,
+                    nonblank: true
+                },
+                form_cust_street_address: {
+                    required: true,
+                    nonblank: true
+                },
+                form_cust_city: {
+                    required: true,
+                    nonblank: true
+                },
+                form_cust_county: {
+                    required: true,
+                    nonblank: true
+                },
                 form_cust_state: "required",
                 form_cust_zip: {
                     required: true,
                     minlength: 5
                 },
                 form_cust_place_of_birth: {
-                    required: "#form_cust_foreign_country:blank"   
+                    required: "#form_cust_foreign_country:blank",
+                    nonblank: "#form_cust_foreign_country:blank"
                 },
                 form_cust_state_of_birth: {
                     required: "#form_cust_place_of_birth:filled"
                 },
                 form_cust_foreign_country: {
-                    required: "#form_cust_place_of_birth:blank"   
+                    required: "#form_cust_place_of_birth:blank",
+                    nonblank: "#form_cust_place_of_birth:blank"
                 },
                 form_cust_height_ft: "required",
                 form_cust_height_in: {
@@ -88,10 +116,12 @@ $().ready(function() {
                 form_cust_question_12: "required",
                 form_cust_citizenship: "required",
                 form_cust_citizenship_other_desc: {
-                    required: "#form_cust_citizenship_other:checked"
+                    required: "#form_cust_citizenship_other:checked",
+                    nonblank: "#form_cust_citizenship_other:checked"
                 },
                 form_cust_alien_num: {
-                    required: "#form_cust_citizenship_us:unchecked"
+                    required: "#form_cust_citizenship_us:unchecked",
+                    nonblank: "#form_cust_citizenship_us:unchecked"
                 }
             },
             messages: {
