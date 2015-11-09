@@ -14,6 +14,10 @@ $().ready(function() {
     $.validator.addMethod("inches", function(value, element) {
         return this.optional(element) || ( Number(value) >= 0 && Number(value) < 12);
     }, "Valid inches are between 0 and 11.");
+
+    $.validator.addMethod("nonzero", function(value, element) {
+        return this.optional(element) || value > 0 ;
+    }, "Please enter a valid birth date.");
     
     $(".next").click(function(){
         var form = $("#atfForm");
@@ -51,6 +55,18 @@ $().ready(function() {
                 },
                 form_cust_sex: "required",
                 birthdate: "required",
+                "birth[day]": {
+                    required: true,
+                    nonzero: true
+                },
+                "birth[year]": {
+                    required: true,
+                    nonzero: true
+                },
+                "birth[month]": {
+                    required: true,
+                    nonzero: true
+                },
                 form_cust_ssn: {
                     ssn: true
                 },
@@ -337,7 +353,8 @@ $().ready(function() {
 //    $(window).keypress(function() {
 //        $('.tooltip').tooltipster('hide');
 //    });
-            
+
+    $("div").birthdaypicker(options={});
     
 });
 
