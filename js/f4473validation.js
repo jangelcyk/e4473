@@ -34,26 +34,32 @@ $().ready(function() {
             rules: {
                 form_cust_last_name: {
                     required: true,
+                    minlength: 2,
                     nonblank: true
                 },
                 form_cust_first_name: {
                     required: true,
+                    minlength: 2,
                     nonblank: true
                 },
                 form_cust_middle_name: {
                     required: true,
+                    minlength: 2,
                     nonblank: true
                 },
                 form_cust_street_address: {
                     required: true,
+                    minlength: 2,
                     nonblank: true
                 },
                 form_cust_city: {
                     required: true,
+                    minlength: 2,
                     nonblank: true
                 },
                 form_cust_county: {
                     required: true,
+                    minlength: 2,
                     nonblank: true
                 },
                 form_cust_state: "required",
@@ -63,22 +69,32 @@ $().ready(function() {
                 },
                 form_cust_place_of_birth: {
                     required: "#form_cust_foreign_country:blank",
-                    nonblank: "#form_cust_foreign_country:blank"
+                    nonblank: "#form_cust_foreign_country:blank",
+                    minlength: 2
                 },
                 form_cust_state_of_birth: {
                     required: "#form_cust_place_of_birth:filled"
                 },
                 form_cust_foreign_country: {
                     required: "#form_cust_place_of_birth:blank",
-                    nonblank: "#form_cust_place_of_birth:blank"
+                    nonblank: "#form_cust_place_of_birth:blank",
+                    minlength: 2
                 },
-                form_cust_height_ft: "required",
+                form_cust_height_ft: {
+                    required: true,
+                    min: 4,
+                    max: 8
+                },
                 form_cust_height_in: {
                     required: true,
-                    inches: true
+                    min: 0,
+                    max: 11
+//                    inches: true
                 },
                 form_cust_weight: {
                     required: true,
+                    min: 60,
+                    max: 700,
                     minlength: 2
                 },
                 form_cust_sex: "required",
@@ -117,11 +133,16 @@ $().ready(function() {
                 form_cust_citizenship: "required",
                 form_cust_citizenship_other_desc: {
                     required: "#form_cust_citizenship_other:checked",
-                    nonblank: "#form_cust_citizenship_other:checked"
+                    nonblank: "#form_cust_citizenship_other:checked",
+                    minlength: 2,
+                    nonblank: true
                 },
                 form_cust_alien_num: {
                     required: "#form_cust_citizenship_us:unchecked",
-                    nonblank: "#form_cust_citizenship_us:unchecked"
+                    nonblank: "#form_cust_citizenship_us:unchecked",
+                    minlength: 8,
+                    maxlength: 15,
+                    nonblank: true
                 }
             },
             messages: {
