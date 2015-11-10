@@ -32,8 +32,21 @@
         <br />
         
         <form class="cmxform" method="post" action="" enctype="multipart/form-data" id="atfForm">
-            <input type="hidden" name="form_cust_num" value="108633931" />
-            <input type="hidden" name="form_cust_pin" value="338" />
+            <fieldset id="loginpage">
+                <legend>Please Log In</legend>
+                <p>
+                    <label for="form_cust_num" align="right">Customer Number</label>
+                    <input type="text" name="form_cust_num" id="form_cust_num" value="" size="10" maxlength="9" />
+                    <label for="invalid-form_cust_num"></label><span id="invalid-form_cust_num"></span>
+                </p>            
+                <p>
+                    <label for="form_cust_pin" align="right">Customer Pin</label>
+                    <input type="text" name="form_cust_pin" id="form_cust_pin" value="" size="10" maxlength="6" />
+                    <label for="invalid-form_cust_pin"></label><span id="invalid-form_cust_pin"></span>
+                </p>
+                <p align="center"><a class="btn btn-primary next">Log In</a></p>
+            </fieldset>
+            
             <fieldset id="page1">
                 <legend>1. Transferee's Full Name
                     <img src="images/icon-tooltip.png" id="tt-name" />
@@ -227,14 +240,11 @@
                         <span id="invalid-form_cust_sex"></span>
                 </p>
                 <legend>7. Birth Date</legend>
-<!--                <label for="birthdaypicker">Select Birth Date</label>-->
                 <div class="picker" id="birthdaypicker"></div>
-<!--                        <input type="date" data-role="date" name="birthdate" id="birthdate" value="" />-->
                 <span id="invalid-birthday"></span>
                 <p align="right"><a class="btn btn-primary next">Next</a></p>
             </fieldset>                
                 
-
             <fieldset id="page3">
                 <legend>8. Social Security Number <i>(<b>Optional</b>, but will help prevent misidentification)</i></legend>
                 <p>
@@ -318,7 +328,7 @@
                 </p>
                 <p align="right"><a class="btn btn-primary next">Next</a></p>
             </fieldset>
-                <!------- -->
+
             <fieldset id="page5">
                 <legend>11.e.</legend>
                 <p>
@@ -358,7 +368,7 @@
                 </p>
                 <p align="right"><a class="btn btn-primary next">Next</a></p>
             </fieldset>
-                <!------- -->
+
             <fieldset id="page6">
                 <legend>11.i.
                     <img src="images/icon-tooltip.png" id="tt-11i" />
@@ -410,7 +420,7 @@
                 </div>
                 <p align="right"><a class="btn btn-primary next">Next</a></p>
             </fieldset>
-                <!------- -->
+
             <fieldset id="page7">
                 <legend>13. What is your State of residence <i>(if any)?  (See instructions for Question 13.)</i>
                     <img src="images/icon-tooltip.png" id="tt-13" />

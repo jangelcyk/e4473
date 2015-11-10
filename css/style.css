@@ -189,6 +189,10 @@ form.cmxform .gray * {
     color: gray;
 }
 
+#page1{
+    display:none;
+}
+
 #page2{
     display:none;
 }
