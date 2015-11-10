@@ -152,7 +152,7 @@ $().ready(function() {
                 form_cust_zip: "Enter a valid 5 digit ZIP Code."
             },
             errorPlacement: function(error, element) {
-                error.appendTo('#invalid-' + element.attr('name'));
+                error.appendTo('#invalid-' + element.attr('name').replace(/[\[\]]/g, '' ));
             }
         });
         
@@ -405,7 +405,8 @@ $().ready(function() {
 //        $('.tooltip').tooltipster('hide');
 //    });
 
-    $("div").birthdaypicker(options={});
+    $("div.picker").birthdaypicker(options={
+    });
     
 });
 
