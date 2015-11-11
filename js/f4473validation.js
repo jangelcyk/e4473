@@ -169,8 +169,27 @@ $().ready(function() {
             // Verify customer is content with their answers before proceeding.
 
             if ($('#loginpage').is(":visible")){
-                current_fs = $('#loginpage');
-                next_fs = $('#page1');
+
+                $.ajax({
+                    url: 'ajax/verifypin.pl',
+                    method: "GET",
+                    dataType: "json",
+                    success: function(data) {
+                        if (data.result == true) {
+                            window.alert('Found');
+                            current_fs = $('#loginpage');
+                            next_fs = $('#page1');
+                            next_fs.show(); 
+                            current_fs.hide();
+                        }
+                        else if (data.result == false) {
+                            window.alert('Failed to find Customer Number or Pin.  Please verify and try again.');
+                        }
+                    },
+                    error: function(xhr, textStatus, errorThrown) {
+                        window.alert(textStatus);
+                    }
+                });
             }
             else {
                 
@@ -209,9 +228,9 @@ $().ready(function() {
                         $('#formsubmit').show();
                     }
                 }
+                next_fs.show(); 
+                current_fs.hide();
             }
-            next_fs.show(); 
-            current_fs.hide();
         }
     });            
     

@@ -1,7 +1,9 @@
 #!/usr/bin/perl
 
+use strict;
+use JSON;
+
 print "Content-Type: text/html\n\n";
 
-print "hello\n";
-
+print '{"result": false}';
 
