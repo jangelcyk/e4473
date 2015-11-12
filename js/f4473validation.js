@@ -1,4 +1,32 @@
 
+function calcAge(selectedYear, selectedMonth, selectedDay) {
+//    window.alert(selectedYear);
+    
+    var ageInYears;
+    var today = new Date();
+    var currDay = today.getDate();
+    var currMonth = today.getMonth()+1; 
+    var currYear = today.getFullYear();
+
+    var yearDiff = currYear - Number(selectedYear);
+    
+    if ( currMonth > Number(selectedMonth) ) {
+        ageInYears = yearDiff;
+    }
+    else if ( currMonth < Number(selectedMonth) ) {
+        ageInYears = yearDiff - 1;
+    }
+    else {
+        if ( currDay >= Number(selectedDay) ) {
+            ageInYears = yearDiff;
+        }
+        else {
+            ageInYears = yearDiff - 1;
+        }
+    }
+    console.log(ageInYears);
+}
+
 $.validator.setDefaults({
     submitHandler: function() {
         alert("submitted!");
@@ -7,6 +35,9 @@ $.validator.setDefaults({
 
 $().ready(function() {
 
+    $("div.picker").birthdaypicker(options={
+    });
+    
     // validate ssn in proper format 123-12-1234
     $.validator.addMethod("ssn", function(value, element) {
         return this.optional(element) || /^\d{3}\-\d{2}\-\d{4}$/.test(value);
@@ -165,15 +196,14 @@ $().ready(function() {
         });
         
         if (form.valid() == true){
-            
-            // Verify customer is content with their answers before proceeding.
 
             if ($('#loginpage').is(":visible")){
-
+                // validate log in credentials
                 $.ajax({
                     url: 'ajax/verifypin.pl',
                     method: "GET",
                     dataType: "json",
+                    //data: "abc=123&def=456",
                     success: function(data) {
                         if (data.result == true) {
                             window.alert('Found');
@@ -192,7 +222,7 @@ $().ready(function() {
                 });
             }
             else {
-                
+                // Verify customer is content with their answers before proceeding.
                 var verified = confirm("Are you sure you have answered the questions correctly");
                 
                 if (verified) {
@@ -359,6 +389,11 @@ $().ready(function() {
         }
     });
 
+    $("#birthdate").change( function() {
+        var input = $( this );
+        window.alert("birthday");
+    });
+
     
 //    $('#tt-template').tooltipster({
 //        trigger: 'click',
@@ -449,9 +484,6 @@ $().ready(function() {
 //        $('.tooltip').tooltipster('hide');
 //    });
 
-    $("div.picker").birthdaypicker(options={
-    });
-    
 });
 
                       
