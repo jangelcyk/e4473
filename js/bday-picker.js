@@ -96,8 +96,7 @@
 
       // Create the hidden date markup
       if (settings["hiddenDate"]) {
-//        $("<input type='hidden' name='" + settings["fieldName"] + "'/>")
-        $("<input name='" + settings["fieldName"] + "'/>")
+        $("<input type='hidden' name='" + settings["fieldName"] + "'/>")
             .attr("id", settings["fieldId"])
             .val(hiddenDate)
             .appendTo($fieldset);
@@ -189,7 +188,6 @@
           hiddenDate = selectedYear + "-" + selectedMonth + "-" + selectedDay;
           $(this).find('#'+settings["fieldId"]).val(hiddenDate);
           if (settings["onChange"] != null) {
-//            settings["onChange"](hiddenDate);
             settings["onChange"](selectedYear, selectedMonth, selectedDay);
           }
         }

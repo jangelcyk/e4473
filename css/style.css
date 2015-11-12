@@ -119,7 +119,7 @@ form.cmxform fieldset fieldset label {
     margin-left: 103px;
 }
 
-form.cmxform label.error {
+form.cmxform label.error, span.ageerror {
     margin-left: 103px;
     width: 220px;
 }
@@ -160,7 +160,7 @@ form.cmxform fieldset p, form.cmxform fieldset fieldset {
     background: url(../images/cmxform-divider.gif) left bottom repeat-x;
 }
 
-form.cmxform label.error, label.error {
+form.cmxform label.error, label.error, span.ageerror {
     color: red;
     font-style: italic
 }
@@ -222,6 +222,14 @@ form.cmxform .gray * {
 }
 
 #page7{
+    display:none;
+}
+
+#age-not-18{
+    display:none;
+}
+
+#age-not-21{
     display:none;
 }
 

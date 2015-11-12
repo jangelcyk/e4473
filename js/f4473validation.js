@@ -25,6 +25,18 @@ function calcAge(selectedYear, selectedMonth, selectedDay) {
         }
     }
     console.log(ageInYears);
+    if ( ageInYears < 18 ) {
+        $('#age-not-18').show();
+        $('#age-not-21').hide();
+    }
+    else if ( ageInYears < 21 ) {
+        $('#age-not-18').hide();
+        $('#age-not-21').show();       
+    }
+    else {
+        $('#age-not-18').hide();
+        $('#age-not-21').hide();
+    }
 }
 
 $.validator.setDefaults({
@@ -48,6 +60,11 @@ $().ready(function() {
         return this.optional(element) || ( Number(value) >= 0 && Number(value) < 12);
     }, "Valid inches are between 0 and 11.");
 
+    // validate cust is >= 18
+    $.validator.addMethod("tooyoung", function(value, element) {
+        return this.optional(element) || !($("#age-not-18").is(":visible")) ;
+    }, "You can not continue with this application, please verify birth date.");
+    
     // validate numerical value > 0
     $.validator.addMethod("nonzero", function(value, element) {
         return this.optional(element) || value > 0 ;
@@ -144,7 +161,8 @@ $().ready(function() {
                 },
                 "birth[year]": {
                     required: true,
-                    nonzero: true
+                    nonzero: true,
+                    tooyoung: true
                 },
                 "birth[month]": {
                     required: true,
@@ -188,10 +206,24 @@ $().ready(function() {
                 form_cust_middle_name: "This field is required. NMN if no middle name.",
                 form_cust_race: "Select one or more races.",
                 form_cust_place_of_birth: "Select only one of either U.S. city and state or foreign country code.",
-                form_cust_zip: "Enter a valid 5 digit ZIP Code."
+                form_cust_zip: "Enter a valid 5 digit ZIP Code.",
+                "birth[month]": "You must supply a month.",
+                "birth[day]": "You must supply a day.",
+//                "birth[year]": "You must supply a year."
             },
             errorPlacement: function(error, element) {
-                error.appendTo('#invalid-' + element.attr('name').replace(/[\[\]]/g, '' ));
+                if (element.attr('name') == "birth[month]") {
+                    error.appendTo('#invalid-birthday');            
+                }
+                else if (element.attr('name') == "birth[day]") {
+                    error.appendTo('#invalid-birthday');
+                }
+                else if (element.attr('name') == "birth[year]") {
+                    error.appendTo('#invalid-birthday');
+                }
+                else {
+                    error.appendTo('#invalid-' + element.attr('name').replace(/[\[\]]/g, '' ));
+                }
             }
         });
         
@@ -389,10 +421,10 @@ $().ready(function() {
         }
     });
 
-    $("#birthdate").change( function() {
-        var input = $( this );
-        window.alert("birthday");
-    });
+//    $("#birthdate").change( function() {
+//        var input = $( this );
+//        window.alert("birthday");
+//    });
 
     
 //    $('#tt-template').tooltipster({
