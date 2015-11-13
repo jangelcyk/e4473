@@ -208,8 +208,8 @@ $().ready(function() {
                 form_cust_place_of_birth: "Select only one of either U.S. city and state or foreign country code.",
                 form_cust_zip: "Enter a valid 5 digit ZIP Code.",
                 "birth[month]": "You must supply a month.",
-                "birth[day]": "You must supply a day.",
-//                "birth[year]": "You must supply a year."
+//                "birth[year]": "You must supply a year.",
+                "birth[day]": "You must supply a day."
             },
             errorPlacement: function(error, element) {
                 if (element.attr('name') == "birth[month]") {
