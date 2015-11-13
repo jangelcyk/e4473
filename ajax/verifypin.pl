@@ -2,9 +2,9 @@
 
 use strict;
 #use warnings;
-use JSON;
+#use JSON;
 
-require "config.pl";
+require "config.pm";
 
 my %FORM;
 
@@ -13,7 +13,13 @@ print "Content-Type: text/html\n\n";
 parse_Form();
 
 if ($Config::PROD == 0) {
-    print '{"result": false}';
+    if ( $FORM{form_cust_num} % 2 == 0 ) {
+        print '{"result": false}';
+    }
+    else {
+        print '{"result": true}';
+    }
+        
 }
 elsif ($Config::PROD == 1) {
     print '{"result": true}';
@@ -35,7 +41,6 @@ sub parse_Form {
         } else {
                 @pairs = ('name=');
         }
-        print "POST:".$buffer."\n";
    # Split the name-value pairs
 
    foreach my $pair (@pairs) {
@@ -47,3 +52,4 @@ sub parse_Form {
       $FORM{$name} = $value;
    }
 }
+

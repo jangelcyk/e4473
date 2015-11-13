@@ -235,10 +235,13 @@ $().ready(function() {
                     url: 'ajax/verifypin.pl',
                     method: "GET",
                     dataType: "json",
-                    //data: "abc=123&def=456",
+                    
+                    data: { form_cust_num: $("#form_cust_num").val(), 
+                            form_cust_pin: $("#form_cust_pin").val()},
+                    
                     success: function(data) {
                         if (data.result == true) {
-                            window.alert('Found');
+                            console.log('Found');
                             current_fs = $('#loginpage');
                             next_fs = $('#page1');
                             next_fs.show(); 
