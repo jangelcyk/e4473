@@ -7,21 +7,8 @@ use lib qw(/up/app/modules /up/v2/modules);
 
 # Set default environment before loading modules
 # because they are passed to DBAccess when loaded
-$ENV{'V2WEBSERVER'} = '';
-$ENV{'V2WEBPORT'}   = '';
-$ENV{'V2DBSERVER'}  = '';
-$ENV{'V2DBNAME'}    = '';
-$ENV{'V2DBUSER'}    = '';
-$ENV{'V2DBPASS'}    = '';
-$ENV{'V2DBTIMEOUT'} = 30;
-$ENV{'HOSTNAME'}    = $ENV{SERVER_NAME};
-$ENV{'USER'}        = 'web';
-$ENV{"V2TLCSERVER"} = '';
 
 require "config.pm";
-
-use Common;
-use DBAccess;
 
 my %FORM;
 
@@ -44,6 +31,21 @@ elsif ($Config::PROD == 1) {
     my %custInfo;
     my $rows;
     my $sql;
+
+    $ENV{'V2WEBSERVER'} = $Config::WEBSERVER;
+    $ENV{'V2WEBPORT'}   = $Config::WEBPORT;
+    $ENV{'V2DBSERVER'}  = $Config::DBSERVER;
+    $ENV{'V2DBNAME'}    = $Config::DBNAME;
+    $ENV{'V2DBUSER'}    = $Config::DBUSER;
+    $ENV{'V2DBPASS'}    = $Config::DBPASS;
+    $ENV{'V2DBTIMEOUT'} = $Config::DBTIMEOUT;
+    $ENV{'HOSTNAME'}    = $ENV{SERVER_NAME};
+    $ENV{'USER'}        = 'web';
+    $ENV{"V2TLCSERVER"} = '127.0.0.1';
+
+    use Common;
+    use DBAccess;
+
     my $db = new DBAccess(debug => 0,
                           webserver => $Config::WEBSERVER,
                           webport   => $Config::WEBPORT,
@@ -53,7 +55,12 @@ elsif ($Config::PROD == 1) {
                           dbpass    => $Config::DBPASS,
                           dbtimeout => $Config::DBTIMEOUT);
 
-    $sql  = 'SELECT * FROM atf4473 WHERE cust_num = ' . $FORM{form_cust_num} . ' AND atf4473_id = ' . $FORM{form_cust_pin};
+    # Set some defaults to test via cli
+
+    my $custNum = (defined($FORM{form_cust_num}) ? $FORM{form_cust_num} : 1);
+    my $custPin = (defined($FORM{form_cust_pin}) ? $FORM{form_cust_pin} : 1);
+
+    $sql  = 'SELECT * FROM atf4473 WHERE cust_num = ' . $custNum . ' AND atf4473_id = ' . $custPin;
 
     ($errcode, $errdesc, $rows) = $db->query($sql, \%custInfo);
     if ($errcode != ERROR_OK) {
