@@ -40,8 +40,9 @@ function calcAge(selectedYear, selectedMonth, selectedDay) {
 }
 
 $.validator.setDefaults({
-    submitHandler: function() {
-        alert("submitted!");
+    submitHandler: function(form) {
+        form.submit();
+        //        alert("submitted!");
     }
 });
 
