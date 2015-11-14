@@ -74,15 +74,18 @@ elsif ($Config::PROD == 1) {
                    dbpass    => $Config::DBPASS,
                    dbtimeout => $Config::DBTIMEOUT);
 
-    updateCustInfoDB($custNum, $custPin);
-    
-    print "<center><br><br>Your application has been submitted.<br><br></center>\n";
-}
+    my $updateSuccess = updateCustInfoDB($custNum, $custPin);
 
+    if ($updateSuccess == 1) {
+      print "<center><br><br>Your application has been submitted.<br><br></center>\n";
+    }
+    else {
+      print "<center><br><br>An error has been detected submitting your application.<br><br></center>\n";
+    }
+}
 
 print $q->end_html;
 print "\n";
-
 
 
 sub updateCustInfoDB {
@@ -98,6 +101,10 @@ sub updateCustInfoDB {
   
   $custInfo{custNum} = $custNum;
   $custInfo{custPin} = $custPin;
+  
+  if ( not ( hasvalue($custInfo{custNum}) and hasvalue($custInfo{custPin}) ) ) {
+    return 0;
+  }
   
   # Set straight assignments
   
@@ -356,19 +363,21 @@ sub updateCustInfoDB {
 
   $sql .= '  WHERE cust_num = #custNum# AND atf4473_id = #custPin# ';
 
-
   $sql  = $db->replace($sql, \%custInfo);
 
-  print $sql . "<BR>\n";
+#  print $sql . "<BR>\n";
 
-  ($errcode, $errdesc, $rows) = $db->query($sql, \%custInfo);
+  ($errcode, $errdesc, $rows) = $db->execute($sql);
   if ($errcode != ERROR_OK) {
     # $db->error_fatal($sm, $errcode, $errdesc, $sql);
     return $errcode;
   }
 
   if ($rows > 0) {
-    # print "Found customer " . $custInfo->{cust_last_name} . " \n";
+    return 1;
   }
-  
+
+  return 0;
 }
+
+

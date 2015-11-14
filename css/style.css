@@ -189,9 +189,11 @@ form.cmxform .gray * {
     color: gray;
 }
 
+/*
 #loginpage{
     display:none;
 }
+*/
 
 #page1{
     display:none;
@@ -217,7 +219,6 @@ form.cmxform .gray * {
     display:none;
 }
 
-/*
 #page7{
     display:none;
 }
@@ -225,7 +226,6 @@ form.cmxform .gray * {
 #formsubmit{
     display:none;
 }
-*/
 
 #age-not-18{
     display:none;
