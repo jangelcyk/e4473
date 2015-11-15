@@ -39,6 +39,27 @@ function calcAge(selectedYear, selectedMonth, selectedDay) {
     }
 }
 
+function clearForm(form) {
+  // iterate over all of the inputs for the form
+  // element that was passed in
+  $(':input', form).each(function() {
+    var type = this.type;
+    var tag = this.tagName.toLowerCase(); // normalize case
+    // it's ok to reset the value attr of text inputs,
+    // password inputs, and textareas
+    if (type == 'text' || type == 'password' || tag == 'textarea')
+      this.value = "";
+      // checkboxes and radios need to have their checked state cleared
+      // but should *not* have their 'value' changed
+    else if (type == 'checkbox' || type == 'radio')
+       this.checked = false;
+    // select elements need to have their 'selectedIndex' property set to -1
+    // (this works for both single and multiple select elements)
+    else if (tag == 'select')
+       this.selectedIndex = -1;
+  });
+};
+
 $.validator.setDefaults({
     submitHandler: function(form) {
         form.submit();
@@ -50,6 +71,8 @@ $().ready(function() {
 
     $("div.picker").birthdaypicker(options={
     });
+    
+    clearForm("#atfForm");
     
     // validate ssn in proper format 123-12-1234
     $.validator.addMethod("ssn", function(value, element) {
@@ -232,13 +255,15 @@ $().ready(function() {
 
             if ($('#loginpage').is(":visible")){
                 // validate log in credentials
+                var ts = (new Date).getTime();
                 $.ajax({
                     url: 'ajax/verifypin.pl',
                     method: "GET",
                     dataType: "json",
-                    
                     data: { form_cust_num: $("#form_cust_num").val(), 
-                            form_cust_pin: $("#form_cust_pin").val()},
+                            form_cust_pin: $("#form_cust_pin").val(),
+                            ts: ts
+                            },
                     
                     success: function(data) {
                         if (data.result == true) {
@@ -515,13 +540,10 @@ $().ready(function() {
         content: $('<p><b>Certification Definition of Engaged in the Business:</b> Under 18 U.S.C. &sect; 922 (a)(1), it is unlawful for a person to engage in the business of dealing in firearms without a license. A person is engaged in the business of dealing in firearms if he or she devotes time, attention, and labor to dealing in firearms as a regular course of trade or business with the principal objective of livelihood and profit through the repetitive purchase and resale of firearms. A license is not required of a person who only makes occasional sales, exchanges, or purchases of firearms for the enhancement of a personal collection or for a hobby, or who sells all or part of his or her personal collection of firearms.</p>')
     });
     
-
 //    $(window).keypress(function() {
 //        $('.tooltip').tooltipster('hide');
 //    });
 
 });
 
-                      
-                      
 
