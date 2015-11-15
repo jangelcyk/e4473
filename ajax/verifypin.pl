@@ -60,7 +60,8 @@ elsif ($Config::PROD == 1) {
     my $custNum = (defined($FORM{form_cust_num}) ? $FORM{form_cust_num} : 1);
     my $custPin = (defined($FORM{form_cust_pin}) ? $FORM{form_cust_pin} : 1);
 
-    $sql  = 'SELECT * FROM atf4473 WHERE cust_num = ' . $custNum . ' AND atf4473_id = ' . $custPin;
+    $sql  = 'SELECT * FROM atf4473 WHERE cust_num = ' . $custNum . ' AND atf4473_id = ' . $custPin .
+            " AND ISNULL(cust_last_name, '') = '' ";
 
     ($errcode, $errdesc, $rows) = $db->query($sql, \%custInfo);
     if ($errcode != ERROR_OK) {
