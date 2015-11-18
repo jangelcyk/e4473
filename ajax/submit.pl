@@ -75,10 +75,14 @@ elsif ($Config::PROD == 1) {
 
     if ($updateSuccess == 1) {
       print "<center><br><br>Your application has been submitted.<br><br></center>\n";
-      print '<center><a href="/atf/form.html">Click here to create a new application.<br><br></center>' . "\n";
+      print '<center><a href="../form.html">Click here to create a new application.<br><br></center>' . "\n";
+      print '<script type="text/javascript">';
+      print 'setTimeout(function(){ window.location = "../form.html"; }, 5000);';
+      print '</script>\n';
     }
     else {
       print "<center><br><br>An error has been detected submitting your application.<br><br></center>\n";
+      print '<center><a href="../form.html">Click here to create a new application.<br><br></center>' . "\n";
     }
 }
 
