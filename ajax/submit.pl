@@ -9,7 +9,7 @@ use lib qw(/up/app/modules /up/v2/modules);
 # Set default environment before loading modules
 # because they are passed to DBAccess when loaded
 
-require "config.pm";
+require "./config.pm";
 
 my $q = new CGI;
 my $db;
@@ -38,11 +38,8 @@ print $q->start_html(-title => 'FCFS - e4473');
 my $custNum = $q->param('form_cust_num');;
 my $custPin = $q->param('form_cust_pin');;
 
-
-
-
 if ($Config::PROD == 0) {
-    print "Compiled<BR><BR>\n";
+    print "Compiled<BR>$Config::PROD<BR>\n";
 }
 elsif ($Config::PROD == 1) {
     my $errcode;
@@ -117,7 +114,8 @@ sub updateCustInfoDB {
   $custInfo{cust_county}              = $q->param('form_cust_county');         
   $custInfo{cust_state}               = $q->param('form_cust_state');          
   $custInfo{cust_zip}                 = $q->param('form_cust_zip');            
-  $custInfo{cust_place_of_birth}      = $q->param('form_cust_place_of_birth'); 
+  $custInfo{cust_place_of_birth}      = $q->param('form_cust_place_of_birth') . ', ' . 
+                                        $q->param('form_cust_state_of_birth'); 
   $custInfo{cust_foreign_country}     = $q->param('form_cust_foreign_country');
   $custInfo{cust_height_ft}           = $q->param('form_cust_height_ft');      
   $custInfo{cust_height_in}           = $q->param('form_cust_height_in');      
