@@ -321,6 +321,7 @@ $().ready(function() {
                 }
                 next_fs.show(); 
                 current_fs.hide();
+                window.scrollTo(0,0);
             }
         }
     });            
