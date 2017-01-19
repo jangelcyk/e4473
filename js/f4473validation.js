@@ -416,16 +416,40 @@ $().ready(function() {
         }
     });
 
-    $('#form_cust_citizenship_other').change( function() {
+    $('#form_cust_question_12d1_y').change( function() {
         if ($(this).is(":checked")) {
-            $('#question_14b').show();
+            $('#question_12d2').show();
         }
         else {
-            $('#question_14b').hide();
+            $('#question_12d2').hide();
+            $('#form_cust_question_12d2_y').prop('checked', false);;
+            $('#form_cust_question_12d2_n').prop('checked', false);;
+        }
+    });
+
+    $('#form_cust_question_12d1_n').change( function() {
+        if ($(this).is(":checked")) {
+            $('#question_12d2').hide();
+            $('#form_cust_question_12d2_y').prop('checked', false);;
+            $('#form_cust_question_12d2_n').prop('checked', false);;
+        }
+        else {
+            $('#question_12d2').show();
+        }
+    });
+    
+    
+    $('#form_cust_citizenship_other').change( function() {
+        if ($(this).is(":checked")) {
+            $('#question_12d2').show();
+        }
+        else {
+            $('#question_12d2').hide();
             $('#form_cust_citizenship_other_desc').val('');
 
         }
     });
+
     
     $('#form_cust_place_of_birth').on('input', function() {
         var input = $( this );

@@ -195,6 +195,7 @@ form.cmxform .gray * {
 }
 */
 
+/*
 #page1{
     display:none;
 }
@@ -222,6 +223,7 @@ form.cmxform .gray * {
 #page7{
     display:none;
 }
+*/
 
 #formsubmit{
     display:none;
@@ -235,7 +237,11 @@ form.cmxform .gray * {
     display:none;
 }
 
-#question_14b{
+#question_12a2{
+    display:none;
+}
+
+#question_12d2{
     display:none;
 }
 
