@@ -207,9 +207,9 @@ $().ready(function() {
                 form_cust_question_11g: "required",
                 form_cust_question_11h: "required",
                 form_cust_question_11i: "required",
-                form_cust_question_11j: "required",
-                form_cust_question_11k: "required",
-                form_cust_question_11l: "required",
+                form_cust_question_12b: "required",
+                form_cust_question_12c: "required",
+                form_cust_question_12d1: "required",
                 form_cust_question_12: "required",
                 form_cust_citizenship: "required",
                 form_cust_citizenship_other_desc: {
@@ -310,12 +310,7 @@ $().ready(function() {
                     }
                     else if ($('#page6').is(":visible")){
                         current_fs = $('#page6');
-                        next_fs = $('#page7');
-                        $('#formsubmit').show();
-                    }
-                    else if ($('#page7').is(":visible")){
-                        current_fs = $('#page7');
-                        next_fs = $('#page7');
+                        next_fs = $('#page6');
                         $('#formsubmit').show();
                     }
                 }
@@ -441,10 +436,10 @@ $().ready(function() {
     
     $('#form_cust_citizenship_other').change( function() {
         if ($(this).is(":checked")) {
-            $('#question_12d2').show();
+            $('#question_12a2').show();
         }
         else {
-            $('#question_12d2').hide();
+            $('#question_12a2').hide();
             $('#form_cust_citizenship_other_desc').val('');
 
         }
