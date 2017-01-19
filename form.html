@@ -25,7 +25,7 @@
         <br />
         <br />
         <center>
-            <b>Section A - Must Be Completed Personally By Transferee/Buyer</b>
+            <b>Section A - Must Be Completed Personally By Transferee/Buyer</b>&nbsp;<img src="images/icon-tooltip.png" id="tt-sectiona" />
         </center>
         <br />
         
@@ -259,7 +259,9 @@
                     <span id="invalid-form_cust_upin"></span>
                 </p>
 
-                <legend>10.a. Ethnicity</legend>
+                <legend>10.a. Ethnicity
+                    <img src="images/icon-tooltip.png" id="tt-10a" />
+                </legend>
                 <p>
                     <label for="form_cust_ethnicity_his">
                     <input type="radio" name="form_cust_ethnicity" id="form_cust_ethnicity_his" value="Hispanic or Latino" />Hispanic or Latino</label>
@@ -267,7 +269,9 @@
                     <input type="radio" name="form_cust_ethnicity" id="form_cust_ethnicity_nothis" value="Not Hispanic or Latino" />Not Hispanic or Latino</label>
                     <span id="invalid-form_cust_ethnicity"></span>
                 </p>
-                <legend>10.b. Race <i>(In addition to ethnicity, select one or more race in 10.b. Both 10.a. and 10.b. must be answered.)</i></legend>
+                <legend>10.b. Race <i>(In addition to ethnicity, select one or more race in 10.b. Both 10.a. and 10.b. must be answered.)</i>
+                    <img src="images/icon-tooltip.png" id="tt-10b" />
+                </legend>
                 <p>
                     <label>
                     <input type="checkbox" name="form_cust_race" id="form_cust_race_ai" value="American Indian or Alaska Native" />American Indian or Alaska Native</label>
@@ -318,7 +322,9 @@
                     <input type="radio" name="form_cust_question_11c" id="form_cust_question_11c_n" value="No" />No
                     <span id="invalid-form_cust_question_11c"></span>
                 </p>
-                <legend>11.d.</legend>
+                <legend>11.d.
+                    <img src="images/icon-tooltip.png" id="tt-11d" />
+                </legend>
                 <p>
                     <label for="form_cust_question_11d">Are you a fugitive from justice? <i>(See Instructions for Question 11.d.)</i></label>
                     <input type="radio" name="form_cust_question_11d" id="form_cust_question_11d_y" value="Yes" />Yes
@@ -409,32 +415,38 @@
                 </p>
 -->
                 <div id="question_12">
-                <legend>12.a.
-                    <img src="images/icon-tooltip.png" id="tt-12" />
-                </legend>
+                <legend>12.a. Country of Citizenship: (Check/List more than one, if applicable. Nationals of the United States may check U.S.A.)</legend>
                 <p>
-                    <label for="form_cust_question_12">If you are an alien admitted to the United States under a nonimmigrant visa, do you fall within any of the exceptions set forth in the instructions? <b>(If &quot;yes,&quot; the licensee must complete question 20c.)</b> <i>(See Instructions for Question 12.) If question 11.l. is answered with a &quot;no&quot; response, <b>then do NOT respond</b> to question 12 and proceed to question 13.</i></label>
-                    <input type="radio" name="form_cust_question_12" id="form_cust_question_12_y" value="Yes" />Yes
-                    &nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="radio" name="form_cust_question_12" id="form_cust_question_12_n" value="No" />No
-                    <span id="invalid-form_cust_question_12"></span>
+                    <label for="form_cust_citizenship_us">
+                    <input type="checkbox" name="form_cust_citizenship" id="form_cust_citizenship_us" value="United States of America" />
+                        United States of America <i>(U.S.A.)</i>
+                    </label>
+                    <br />
+                    <label for="form_cust_citizenship_other">
+                    <input type="checkbox" name="form_cust_citizenship" id="form_cust_citizenship_other" value="Other" />
+                        Other Country/Countries
+                    </label>
+                    <span id="invalid-form_cust_citizenship"></span>
                 </p>
+                    <div id="question_14b">
+                        <label for="form_cust_citizenship_other_desc" ><i>(Specify)</i></label>
+                        <input type="text" name="form_cust_citizenship_other_desc" id="form_cust_citizenship_other_desc" size="20" maxlength="20" />
+                        <span id="invalid-form_cust_citizenship_other_desc"></span>
+                    </div>
 
                 <legend>12.b.
-                    <img src="images/icon-tooltip.png" id="tt-12" />
                 </legend>
                 <p>
-                    <label for="form_cust_question_12">question</i></label>
+                    <label for="form_cust_question_12">Have you ever renounced your United States citizenship?</label>
                     <input type="radio" name="form_cust_question_12" id="form_cust_question_12_y" value="Yes" />Yes
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     <input type="radio" name="form_cust_question_12" id="form_cust_question_12_n" value="No" />No
                     <span id="invalid-form_cust_question_12"></span>
                 </p>
                 <legend>12.c.
-                    <img src="images/icon-tooltip.png" id="tt-12" />
                 </legend>
                 <p>
-                    <label for="form_cust_question_12">question</i></label>
+                    <label for="form_cust_question_12">Are you an alien <b>illegally</b> or <b>unlawfully</b> in the United States?</label>
                     <input type="radio" name="form_cust_question_12" id="form_cust_question_12_y" value="Yes" />Yes
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     <input type="radio" name="form_cust_question_12" id="form_cust_question_12_n" value="No" />No
@@ -444,17 +456,16 @@
                     <img src="images/icon-tooltip.png" id="tt-12" />
                 </legend>
                 <p>
-                    <label for="form_cust_question_12">question</i></label>
+                    <label for="form_cust_question_12">Are you an alien who has been admitted to the United States under a nonimmigrant visa? <i>(See Instructions for Question 12.d.)</i></label>
                     <input type="radio" name="form_cust_question_12" id="form_cust_question_12_y" value="Yes" />Yes
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     <input type="radio" name="form_cust_question_12" id="form_cust_question_12_n" value="No" />No
                     <span id="invalid-form_cust_question_12"></span>
                 </p>
                 <legend>12.d.2.
-                    <img src="images/icon-tooltip.png" id="tt-12" />
                 </legend>
                 <p>
-                    <label for="form_cust_question_12">question</i></label>
+                    <label for="form_cust_question_12">If &quot;yes&quot;, do you fall within any of the exceptions stated in the instructions?</label>
                     <input type="radio" name="form_cust_question_12" id="form_cust_question_12_y" value="Yes" />Yes
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     <input type="radio" name="form_cust_question_12" id="form_cust_question_12_n" value="No" />No
@@ -463,7 +474,9 @@
                 </div>
 
                 <div id="question_13">
-                    <legend>13. If you are an alien, record your U.S.-Issued Alien or Admission number <i>(AR#, USCIS#, or I94#)</i>:</legend>
+                    <legend>13. If you are an alien, record your U.S.-Issued Alien or Admission number <i>(AR#, USCIS#, or I94#)</i>:
+                        <img src="images/icon-tooltip.png" id="tt-13" />
+                    </legend>
                 <p>
                     <label for="form_cust_alien_num"></label>
                     <input type="text" name="form_cust_alien_num" id="form_cust_alien_num" size="15" maxlength="15" />
@@ -566,7 +579,7 @@
             </fieldset>
 -->
 
-            <b>I certify that my answers in Section A are true, correct, and complete. I have read and understand the Notices, Instructions, and Definitions on ATF Form 4473. I understand that answering &quot;yes&quot; to question 11.a. if I am not the actual transferee/buyer is a crime punishable as a felony under Federal law, and may also violate State and/or local law. I understand that a person who answers &quot;yes&quot; to any of the questions 11.b. through 11.i and/or 12.b. through 12.c. is prohibited from purchasing or receiving a firearm. I understand that a person who answers &quot;yes&quot; to question 12.d.1. is prohibited from receiving or possessing a firearm, unless the person answers &quot;yes&quot; to question 12.d.2. and provides the documentation required in 18.c. I also understand that making any false oral or written statement, or exhibiting any false or misrepresented identification with respect to this transaction, is a crime punishable as a felony under Federal law, and may also violate State and/or local law. I further understand that the repetitive purchase of firearms for the purpose of resale for livelihood and profit without a Federal firearms license is a violation of Federal law. <i>(See Instructions for Question 14.)</i></b> <img src="images/icon-tooltip.png" id="tt-16" />
+            <b>I certify that my answers in Section A are true, correct, and complete. I have read and understand the Notices, Instructions, and Definitions on ATF Form 4473. I understand that answering &quot;yes&quot; to question 11.a. if I am not the actual transferee/buyer is a crime punishable as a felony under Federal law, and may also violate State and/or local law. I understand that a person who answers &quot;yes&quot; to any of the questions 11.b. through 11.i and/or 12.b. through 12.c. is prohibited from purchasing or receiving a firearm. I understand that a person who answers &quot;yes&quot; to question 12.d.1. is prohibited from receiving or possessing a firearm, unless the person answers &quot;yes&quot; to question 12.d.2. and provides the documentation required in 18.c. I also understand that making any false oral or written statement, or exhibiting any false or misrepresented identification with respect to this transaction, is a crime punishable as a felony under Federal law, and may also violate State and/or local law. I further understand that the repetitive purchase of firearms for the purpose of resale for livelihood and profit without a Federal firearms license is a violation of Federal law. <i>(See Instructions for Question 14.)</i></b> <img src="images/icon-tooltip.png" id="tt-14" />
             <br />
             <br />
             <input type="submit" value="Agree and Certify" class="submit" id="formsubmit" />
