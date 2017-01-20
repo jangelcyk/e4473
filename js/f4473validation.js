@@ -210,6 +210,7 @@ $().ready(function() {
                 form_cust_question_12b: "required",
                 form_cust_question_12c: "required",
                 form_cust_question_12d1: "required",
+                form_cust_question_12d2: "required",
                 form_cust_question_12: "required",
                 form_cust_citizenship: "required",
                 form_cust_citizenship_other_desc: {
