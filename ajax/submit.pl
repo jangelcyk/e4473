@@ -78,7 +78,7 @@ elsif ($Config::PROD == 1) {
       print '<center><a href="../form.html">Click here to create a new application.<br><br></center>' . "\n";
       print '<script type="text/javascript">';
       print 'setTimeout(function(){ window.location = "../form.html"; }, 5000);';
-      print '</script>\n';
+      print '</script>'."\n";
     }
     else {
       print "<center><br><br>An error has been detected submitting your application.<br><br></center>\n";
@@ -87,8 +87,6 @@ elsif ($Config::PROD == 1) {
 }
 
 print $q->end_html;
-print "\n";
-
 
 sub updateCustInfoDB {
 
