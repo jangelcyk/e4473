@@ -254,44 +254,84 @@ sub updateCustInfoDB {
     $custInfo{cust_question_11i_yn} = '';
   }
   
-  if ($q->param('form_cust_question_11j') eq 'Yes') {
-    $custInfo{cust_question_11j_yn} = 'Y';
+#   if ($q->param('form_cust_question_11j') eq 'Yes') {
+#     $custInfo{cust_question_11j_yn} = 'Y';
+#   }
+#   elsif ($q->param('form_cust_question_11j') eq 'No') {
+#     $custInfo{cust_question_11j_yn} = 'N';
+#   }
+#   else {
+#     $custInfo{cust_question_11j_yn} = '';
+#   }
+#   
+#   if ($q->param('form_cust_question_11k') eq 'Yes') {
+#     $custInfo{cust_question_11k_yn} = 'Y';
+#   }
+#   elsif ($q->param('form_cust_question_11k') eq 'No') {
+#     $custInfo{cust_question_11k_yn} = 'N';
+#   }
+#   else {
+#     $custInfo{cust_question_11k_yn} = '';
+#   }
+#   
+#   if ($q->param('form_cust_question_11l') eq 'Yes') {
+#     $custInfo{cust_question_11l_yn} = 'Y';
+#   }
+#   elsif ($q->param('form_cust_question_11l') eq 'No') {
+#     $custInfo{cust_question_11l_yn} = 'N';
+#   }
+#   else {
+#     $custInfo{cust_question_11l_yn} = '';
+#   }
+#  
+#   if ($q->param('form_cust_question_12') eq 'Yes') {
+#     $custInfo{cust_question_12_yn} = 'Y';
+#   }
+#   elsif ($q->param('form_cust_question_12') eq 'No') {
+#     $custInfo{cust_question_12_yn} = 'N';
+#   }
+#   else {
+#     $custInfo{cust_question_12_yn} = '';
+#   }
+
+  if ($q->param('form_cust_question_12b') eq 'Yes') {
+    $custInfo{cust_question_12b_yn} = 'Y';
   }
-  elsif ($q->param('form_cust_question_11j') eq 'No') {
-    $custInfo{cust_question_11j_yn} = 'N';
+  elsif ($q->param('form_cust_question_12b') eq 'No') {
+    $custInfo{cust_question_12b_yn} = 'N';
   }
   else {
-    $custInfo{cust_question_11j_yn} = '';
+    $custInfo{cust_question_12b_yn} = '';
   }
-  
-  if ($q->param('form_cust_question_11k') eq 'Yes') {
-    $custInfo{cust_question_11k_yn} = 'Y';
+
+  if ($q->param('form_cust_question_12c') eq 'Yes') {
+    $custInfo{cust_question_12c_yn} = 'Y';
   }
-  elsif ($q->param('form_cust_question_11k') eq 'No') {
-    $custInfo{cust_question_11k_yn} = 'N';
-  }
-  else {
-    $custInfo{cust_question_11k_yn} = '';
-  }
-  
-  if ($q->param('form_cust_question_11l') eq 'Yes') {
-    $custInfo{cust_question_11l_yn} = 'Y';
-  }
-  elsif ($q->param('form_cust_question_11l') eq 'No') {
-    $custInfo{cust_question_11l_yn} = 'N';
+  elsif ($q->param('form_cust_question_12c') eq 'No') {
+    $custInfo{cust_question_12c_yn} = 'N';
   }
   else {
-    $custInfo{cust_question_11l_yn} = '';
+    $custInfo{cust_question_12c_yn} = '';
   }
-  
-  if ($q->param('form_cust_question_12') eq 'Yes') {
-    $custInfo{cust_question_12_yn} = 'Y';
+
+  if ($q->param('form_cust_question_12d1') eq 'Yes') {
+    $custInfo{cust_question_12d1_yn} = 'Y';
   }
-  elsif ($q->param('form_cust_question_12') eq 'No') {
-    $custInfo{cust_question_12_yn} = 'N';
+  elsif ($q->param('form_cust_question_12d1') eq 'No') {
+    $custInfo{cust_question_12d1_yn} = 'N';
   }
   else {
-    $custInfo{cust_question_12_yn} = '';
+    $custInfo{cust_question_12d1_yn} = '';
+  }
+
+  if ($q->param('form_cust_question_12d2') eq 'Yes') {
+    $custInfo{cust_question_12d2_yn} = 'Y';
+  }
+  elsif ($q->param('form_cust_question_12d2') eq 'No') {
+    $custInfo{cust_question_12d2_yn} = 'N';
+  }
+  else {
+    $custInfo{cust_question_12d2_yn} = '';
   }
   
   foreach my $i ($q->param('form_cust_race')) {
@@ -352,17 +392,22 @@ sub updateCustInfoDB {
   $sql .= "question_11g_yn = [cust_question_11g_yn], ";
   $sql .= "question_11h_yn = [cust_question_11h_yn], ";
   $sql .= "question_11i_yn = [cust_question_11i_yn], ";
-  $sql .= "question_11j_yn = [cust_question_11j_yn], ";
-  $sql .= "question_11k_yn = [cust_question_11k_yn], ";
-  $sql .= "question_11l_yn = [cust_question_11l_yn], ";
-  $sql .= "question_12_yn  = [cust_question_12_yn], ";
+#  $sql .= "question_11j_yn = [cust_question_11j_yn], ";
+#  $sql .= "question_11k_yn = [cust_question_11k_yn], ";
+#  $sql .= "question_11l_yn = [cust_question_11l_yn], ";
+#  $sql .= "question_12_yn  = [cust_question_12_yn], ";
+  $sql .= "question_12b_yn  = [cust_question_12b_yn], ";
+  $sql .= "question_12c_yn  = [cust_question_12c_yn], ";
+  $sql .= "question_12d1_yn  = [cust_question_12d1_yn], ";
+  $sql .= "question_12d2_yn  = [cust_question_12d2_yn], ";
   $sql .= "cust_race_native  = [cust_race_native], ";
   $sql .= "cust_race_asian  = [cust_race_asian], ";
   $sql .= "cust_race_black  = [cust_race_black], ";
   $sql .= "cust_race_hawaiian  = [cust_race_hawaiian], ";
   $sql .= "cust_race_white  = [cust_race_white], ";
   $sql .= "cust_citizenship_usa_yn = [cust_citizenship_usa_yn], ";
-  $sql .= "cust_citizenship_other_desc = [cust_citizenship_other_desc] ";
+  $sql .= "cust_citizenship_other_desc = [cust_citizenship_other_desc], ";
+  $sql .= "form_revision = 'Oct-2016' ";
 
   $sql .= '  WHERE cust_num = #custNum# AND atf4473_id = #custPin# ';
 
